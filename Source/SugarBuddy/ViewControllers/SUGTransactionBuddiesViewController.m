@@ -83,7 +83,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 #pragma mark - SUGBeaconReceiverDelegate
 
-
+-(void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
+{
+    NSLog(@"%@: %i", peripheral.name, RSSI);
+}
 
 
 @end

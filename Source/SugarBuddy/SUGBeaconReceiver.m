@@ -48,7 +48,7 @@
     
     else {
         
-        NSArray *uuidArray = [NSArray arrayWithObjects:[CBUUID UUIDWithString:SUGBTServiceLocalNameKey], nil];
+        NSArray *uuidArray = [NSArray arrayWithObjects:[CBUUID UUIDWithString:SUGBTServiceUUID], nil];
         NSDictionary *options = [NSDictionary dictionaryWithObject: [NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
         
         [self.manager scanForPeripheralsWithServices:uuidArray options:options];
@@ -74,15 +74,15 @@
     peripheral.delegate = self;
     
     // Search only for services that match our UUID
-    [peripheral discoverServices:@[[CBUUID UUIDWithString:SUGBTServiceLocalNameKey]]];
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:SUGBTServiceUUID]]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     id tempDelegate = self.delegate;
-    if ([tempDelegate respondsToSelector:@selector(didUpdateRSSI:)])
-        [self.delegate didUpdateRSSI:-100];
-    
+    if ([tempDelegate respondsToSelector:@selector(beaconPeripheral:didUpdateRSSI:)]) {
+        [self.delegate beaconPeripheral:peripheral didUpdateRSSI:-100];
+    }
     self.connected = NO;
 }
 
@@ -137,8 +137,9 @@
     if (self.delegate) {
        
         id tempDelegate = self.delegate;
-        if ([tempDelegate respondsToSelector:@selector(didUpdateRSSI:)])
-            [self.delegate didUpdateRSSI:[self averageFromLastRSSI]];
+        if ([tempDelegate respondsToSelector:@selector(beaconPeripheral:didUpdateRSSI:)])
+            [self.delegate beaconPeripheral:peripheral
+                              didUpdateRSSI:[self averageFromLastRSSI]];
     }
 }
 

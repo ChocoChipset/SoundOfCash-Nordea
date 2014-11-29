@@ -14,7 +14,8 @@
 - (void)didFindBeacon;
 - (void)didConnectToBeacon;
 - (void)didDetectInteraction;
-- (void)didUpdateRSSI:(int)RSSI;
+- (void)beaconPeripheral:(CBPeripheral *)peripheral
+           didUpdateRSSI:(int)RSSI;
 
 - (void)didConnectToListener;
 @end
