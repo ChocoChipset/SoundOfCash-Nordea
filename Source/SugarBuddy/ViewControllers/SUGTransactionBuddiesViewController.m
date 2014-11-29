@@ -17,6 +17,8 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 @interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource, SUGBeaconReceiverDelegate>
 
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) IBOutlet UILabel *transactionTotal;
+@property (nonatomic) IBOutlet UILabel *totalPerPerson;
 
 @end
 
@@ -65,6 +67,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 - (void)reloadUIData
 {
     self.title = self.viewModel.transactionTitle;
+    self.transactionTotal.text = [self.viewModel transactionTitle];
+    self.totalPerPerson.text = [self.viewModel transactionSubtitle];
+
+    [[self collectionView] reloadData];
 }
 
 #pragma mark - UICollectionViewDelegate
