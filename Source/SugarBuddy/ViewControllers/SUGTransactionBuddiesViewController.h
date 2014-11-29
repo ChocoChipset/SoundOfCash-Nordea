@@ -9,5 +9,5 @@
 
 @property (nonatomic) SUGTransactionBuddiesViewModel *viewModel;
 @property (nonatomic) NSString *transactionID;
-
+@property (nonatomic) NSString *beaconID;
 @end

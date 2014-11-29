@@ -10,6 +10,7 @@
 #import "SUGLatestTransactionsViewController.h"
 #import "SUGTransactionBuddiesViewController.h"
 #import "SUGTransactionBuddiesViewModel.h"
+#import "NSString+Hashing.h"
 
 const NSInteger SUGStartMenuBeaconThreshold = -30;
 
@@ -21,14 +22,11 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 @implementation SUGStartMenuViewController
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CBPeripheral *)peripheral
 {
     if ([segue.identifier isEqualToString:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby]) {
         SUGTransactionBuddiesViewController *nextVC = segue.destinationViewController;
-        
-        id transaction = nil;
-        
-        nextVC.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:transaction];
+        nextVC.beaconID = [peripheral.name SHA1];
         nextVC.sugarDaddy = NO;
     }
 }
@@ -55,12 +53,12 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 
 - (void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
 {
-    NSLog(@"%@", peripheral.name);
+    NSLog(@"%@", [peripheral.name SHA1]);
     
     if (RSSI > SUGStartMenuBeaconThreshold) {
         
         [self performSegueWithIdentifier:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby
-                                  sender:nil];
+                                  sender:peripheral];
     }
 }
 

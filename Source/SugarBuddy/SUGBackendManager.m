@@ -7,8 +7,9 @@
 //
 
 #import "SUGBackendManager.h"
-#import <CommonCrypto/CommonDigest.h>
 #import <UNIRest.h>
+#import "NSString+Hashing.h"
+
 
 static SUGBackendManager *static_backendManager = nil;
 
@@ -28,22 +29,7 @@ static SUGBackendManager *static_backendManager = nil;
 
 - (NSString *)deviceID
 {
-    return [self sha1: [[UIDevice currentDevice] name]];
-}
-
--(NSString*) sha1:(NSString*)input
-{
-    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:input.length];
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(data.bytes, data.length, digest);
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-        [output appendFormat:@"%02x", digest[i]];
-
-    return output;
-
+    return [[[UIDevice currentDevice] name] SHA1];
 }
 
 #pragma mark - Delegate Stuff
@@ -103,30 +89,20 @@ static SUGBackendManager *static_backendManager = nil;
     return [[response body] object];
 }
 
-- (NSDictionary*)discoverSplitBill:(NSArray*)beaconsIDs
+- (void)joinOpenBillForBeaconWithID:(NSString*)beaconID
 {
-    NSLog(@"discover split bills");
+    NSLog(@"join open bill for beacon with ID %@", beaconID);
     
-    NSString* beacons = [beaconsIDs componentsJoinedByString:@"&beacon="];
-    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/bills?beacon=%@", beacons];
-    
-    UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest *request) {
-        [request setUrl:url];
-    }] asJson];
-    return [[response body] object];
-}
-
-- (NSDictionary*)joinSplitBill:(NSString*)billID withAccount:(NSString*)accountID
-{
-    NSLog(@"join split bill %@ for account %@", billID, accountID);
-    
-    NSDictionary* parameters = @{@"action": @"join", @"account": accountID};
-    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/bills/%@", billID];
-    UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
+    NSDictionary* parameters = @{@"account": self.deviceID,
+                                 @"beacon": beaconID};
+    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/join"];
+    [[UNIRest post:^(UNISimpleRequest *request) {
         [request setUrl:url];
         [request setParameters:parameters];
-    }] asJson];
-    return [[response body] object];
+    }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        NSDictionary *responseBody = [[jsonResponse body] object];
+        [self notifyDelegateWithResponseObject:responseBody];
+    }];
 }
 
 - (NSDictionary*)pollSplitBill:(NSString*)billID

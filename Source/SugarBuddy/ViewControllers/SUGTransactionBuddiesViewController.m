@@ -44,8 +44,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     if (self.isSugarDaddy) {
         [[SUGBackendManager sharedManager] createSplitBillWithTransactionID:self.transactionID];
         [SUGBackendManager sharedManager].delegate = self;
-        
         [[SUGBeaconManager sharedManager].broadcaster startBroadCasting];
+    } else if (self.beaconID) {
+        [[SUGBackendManager sharedManager] joinOpenBillForBeaconWithID:self.beaconID];
+        [SUGBackendManager sharedManager].delegate = self;
     }
 }
 
@@ -98,8 +100,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
         return;
     }
     
-    self.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:response];
-    [self reloadUIData];
+    if (self.beaconID) {
+        self.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:response];
+        [self reloadUIData];
+    }
 }
 
 
