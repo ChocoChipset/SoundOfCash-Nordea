@@ -17,12 +17,54 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="Kwn-62-kgi" kind="relationship" relationship="rootViewController" id="7Nv-fH-Mfh"/>
+                        <segue destination="X5T-2i-0gH" kind="relationship" relationship="rootViewController" id="d5m-Bu-Ofq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sij-pA-bEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-347.73333333333335" y="413.69333333333333"/>
+        </scene>
+        <!--I WANT TO-->
+        <scene sceneID="nyO-Ib-Kda">
+            <objects>
+                <viewController id="X5T-2i-0gH" customClass="SUGStartMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XaX-br-zLF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EMo-D4-wsh">
+                                <rect key="frame" x="16" y="53" width="288" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.63921568630000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start a Chip-In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startChipInDidTouchUp:" destination="X5T-2i-0gH" eventType="touchUpInside" id="PIN-7C-bma"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="95H-kX-t7r">
+                                <rect key="frame" x="16" y="251" width="288" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.63921568630000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Join a Chip-In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinChipInDidTouchUp:" destination="X5T-2i-0gH" eventType="touchUpInside" id="c6y-lr-sAe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="I WANT TO" id="hxk-X1-7Dd"/>
+                    <connections>
+                        <segue destination="Kwn-62-kgi" kind="push" identifier="PushLatestTransactions" id="wYg-bX-1oW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttL-uX-tcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="413"/>
         </scene>
         <!--Transaction Buddies View Controller-->
         <scene sceneID="ufC-wZ-h7g">

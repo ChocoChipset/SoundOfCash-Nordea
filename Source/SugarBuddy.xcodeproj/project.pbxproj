@@ -18,6 +18,7 @@
 		3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A56311A29E77E00F75875 /* SUGBeaconBroadcaster.m */; };
 		3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */; };
 		3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */; };
+		3A4710141A2A2C8400727CAC /* SUGStartMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4710131A2A2C8400727CAC /* SUGStartMenuViewController.m */; };
 		3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */; };
 		3A6AEB6D1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */; };
 		3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */; };
@@ -62,6 +63,8 @@
 		3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		3A1A563A1A29ECA700F75875 /* SUGBeaconReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconReceiver.h; sourceTree = "<group>"; };
 		3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconReceiver.m; sourceTree = "<group>"; };
+		3A4710121A2A2C8400727CAC /* SUGStartMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGStartMenuViewController.h; path = ViewControllers/SUGStartMenuViewController.h; sourceTree = "<group>"; };
+		3A4710131A2A2C8400727CAC /* SUGStartMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGStartMenuViewController.m; path = ViewControllers/SUGStartMenuViewController.m; sourceTree = "<group>"; };
 		3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewController.h; path = ViewControllers/SUGTransactionBuddiesViewController.h; sourceTree = "<group>"; };
 		3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGTransactionBuddiesViewController.m; path = ViewControllers/SUGTransactionBuddiesViewController.m; sourceTree = "<group>"; };
 		3A6AEB6B1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewModel.h; path = ViewControllers/SUGTransactionBuddiesViewModel.h; sourceTree = "<group>"; };
@@ -176,9 +179,19 @@
 			name = iBeacon;
 			sourceTree = "<group>";
 		};
+		3A4710111A2A2C5700727CAC /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				3A4710121A2A2C8400727CAC /* SUGStartMenuViewController.h */,
+				3A4710131A2A2C8400727CAC /* SUGStartMenuViewController.m */,
+			);
+			name = Selection;
+			sourceTree = "<group>";
+		};
 		3A6AEB641A29EEB00099B376 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A4710111A2A2C5700727CAC /* Selection */,
 				3A6AEB771A29FD380099B376 /* TransactionBuddies */,
 				3A6AEB781A29FD420099B376 /* Transactions */,
 			);
@@ -424,6 +437,7 @@
 				3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */,
 				3A6AEB861A2A03F70099B376 /* SUGBackendManager.m in Sources */,
 				3A6AEB8D1A2A0BB00099B376 /* UIColor+SugarColors.m in Sources */,
+				3A4710141A2A2C8400727CAC /* SUGStartMenuViewController.m in Sources */,
 				3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */,
 				3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */,
 				3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */,

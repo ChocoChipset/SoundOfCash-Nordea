@@ -10,3 +10,5 @@ NSString * const SUGBTServiceLocalNameKey = @"SugarBuddy";
 #pragma mark - Transition IDs
 
 NSString * const SUGTransitionIDForBuddiesTransition = @"PushTransactionBuddies";
+
+NSString * const SUGTransitionIDForPushLatestTransactions = @"PushLatestTransactions";
