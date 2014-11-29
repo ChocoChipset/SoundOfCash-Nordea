@@ -27,6 +27,8 @@
 		3A6AEB831A2A01DF0099B376 /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AEB821A2A01DF0099B376 /* icon_person.png */; };
 		3A6AEB861A2A03F70099B376 /* SUGBackendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB851A2A03F70099B376 /* SUGBackendManager.m */; };
 		3A6AEB8D1A2A0BB00099B376 /* UIColor+SugarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */; };
+		4B4652EE1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */; };
+		4B4652F01A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,9 @@
 		3A6AEB851A2A03F70099B376 /* SUGBackendManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBackendManager.m; sourceTree = "<group>"; };
 		3A6AEB8B1A2A0BB00099B376 /* UIColor+SugarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SugarColors.h"; path = "Categories/UIColor+SugarColors.h"; sourceTree = "<group>"; };
 		3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SugarColors.m"; path = "Categories/UIColor+SugarColors.m"; sourceTree = "<group>"; };
+		4B4652EC1A2A236B00ED6789 /* SUGBeaconSignalCruncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconSignalCruncher.h; sourceTree = "<group>"; };
+		4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSignalCruncher.m; sourceTree = "<group>"; };
+		4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSinganCruncherTests.m; sourceTree = "<group>"; };
 		D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC630F1BE9678E9EB504666E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +156,7 @@
 			children = (
 				3A1A561F1A29D58900F75875 /* SugarBuddyTests.m */,
 				3A1A561D1A29D58900F75875 /* Supporting Files */,
+				4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */,
 			);
 			path = SugarBuddyTests;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				3A1A56311A29E77E00F75875 /* SUGBeaconBroadcaster.m */,
 				3A1A563A1A29ECA700F75875 /* SUGBeaconReceiver.h */,
 				3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */,
+				4B4652EC1A2A236B00ED6789 /* SUGBeaconSignalCruncher.h */,
+				4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */,
 			);
 			name = iBeacon;
 			sourceTree = "<group>";
@@ -425,6 +433,7 @@
 				3A6AEB861A2A03F70099B376 /* SUGBackendManager.m in Sources */,
 				3A6AEB8D1A2A0BB00099B376 /* UIColor+SugarColors.m in Sources */,
 				3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */,
+				4B4652EE1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m in Sources */,
 				3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */,
 				3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */,
 				3A1A56061A29D58900F75875 /* main.m in Sources */,
@@ -437,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1A56201A29D58900F75875 /* SugarBuddyTests.m in Sources */,
+				4B4652F01A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
