@@ -242,6 +242,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="DoK-8N-xkk" id="6cl-Ko-Thi"/>
+                        <outlet property="transactionTitle" destination="KPu-Gq-4N3" id="vc1-y2-kNC"/>
+                        <outlet property="transactionTotal" destination="B5n-tm-RjR" id="Fmo-JI-inh"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="PushTransactionBuddies" id="ehK-VQ-Af3"/>
                     </connections>
                 </viewController>
@@ -256,6 +258,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DQJ-Ct-G4v"/>
+        <segue reference="ehK-VQ-Af3"/>
     </inferredMetricsTieBreakers>
 </document>

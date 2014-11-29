@@ -21,6 +21,9 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) IBOutlet UILabel *transactionTitle;
+@property (nonatomic) IBOutlet UILabel *transactionTotal;
+
 
 @end
 
@@ -82,6 +85,8 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 - (void)reloadUIData
 {
     self.title = @"Recent Transactions";
+    self.transactionTitle.text = [self.viewModel titleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    self.transactionTotal.text = [self.viewModel subtitleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     
     [self.collectionView reloadData];
 }
