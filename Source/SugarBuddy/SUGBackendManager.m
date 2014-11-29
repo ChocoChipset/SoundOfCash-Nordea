@@ -22,9 +22,14 @@ static SUGBackendManager *static_backendManager = nil;
     return static_backendManager;
 }
 
+- (NSString *)deviceID
+{
+    return [[UIDevice currentDevice] name];
+}
+
 - (NSArray*)getTransactions:(NSString*)accountID
 {
-    NSLog(@"get transactions for account %@", accountID);
+    accountID = self.deviceID;
     
     NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/transactions?account=%@", accountID];
     UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest *request) {

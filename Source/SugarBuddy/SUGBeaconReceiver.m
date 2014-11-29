@@ -152,7 +152,11 @@
 
 - (void)startReadingRSSI
 {
-    _readRSSITimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(readPeripheralRSSI) userInfo:nil repeats:YES];
+    _readRSSITimer = [NSTimer scheduledTimerWithTimeInterval:0.2
+                                                      target:self
+                                                    selector:@selector(readPeripheralRSSI)
+                                                    userInfo:nil
+                                                     repeats:YES];
     [_readRSSITimer fire];
 }
 

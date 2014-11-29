@@ -4,6 +4,8 @@
 
 + (instancetype)sharedManager;
 
+@property (nonatomic) NSString *deviceID;
+
 - (NSArray*)getTransactions:(NSString*)accountID;
 - (NSDictionary*)createSplitBill:(NSString*)transactionID;
 - (NSDictionary*)commitSplitBill:(NSString*)billID;
