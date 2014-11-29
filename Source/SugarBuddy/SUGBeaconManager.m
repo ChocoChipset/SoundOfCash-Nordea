@@ -1,4 +1,5 @@
 #import "SUGBeaconManager.h"
+#import "SUGBeaconBroadcaster.h"
 
 
 static SUGBeaconManager *static_beaconManager = nil;
@@ -29,6 +30,8 @@ static SUGBeaconManager *static_beaconManager = nil;
     if (!(self = [super init])) {
         return nil;
     }
+    
+    _broadcaster = [[SUGBeaconBroadcaster alloc] init];
     
     
     return self;

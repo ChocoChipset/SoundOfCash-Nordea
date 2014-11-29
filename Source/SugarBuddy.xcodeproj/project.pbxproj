@@ -16,6 +16,8 @@
 		3A1A56201A29D58900F75875 /* SugarBuddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A561F1A29D58900F75875 /* SugarBuddyTests.m */; };
 		3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A562A1A29DE1500F75875 /* SUGConstants.m */; };
 		3A1A562F1A29E04100F75875 /* SUGBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A562E1A29E04100F75875 /* SUGBeaconManager.m */; };
+		3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A56311A29E77E00F75875 /* SUGBeaconBroadcaster.m */; };
+		3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 		3A1A562C1A29DF2B00F75875 /* SugarBuddy.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SugarBuddy.pch; sourceTree = "<group>"; };
 		3A1A562D1A29E04100F75875 /* SUGBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconManager.h; sourceTree = "<group>"; };
 		3A1A562E1A29E04100F75875 /* SUGBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconManager.m; sourceTree = "<group>"; };
+		3A1A56301A29E77E00F75875 /* SUGBeaconBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconBroadcaster.h; sourceTree = "<group>"; };
+		3A1A56311A29E77E00F75875 /* SUGBeaconBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconBroadcaster.m; sourceTree = "<group>"; };
+		3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC630F1BE9678E9EB504666E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */,
 				C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,8 +112,7 @@
 				3A1A56291A29DE1500F75875 /* SUGConstants.h */,
 				3A1A562A1A29DE1500F75875 /* SUGConstants.m */,
 				3A1A562C1A29DF2B00F75875 /* SugarBuddy.pch */,
-				3A1A562D1A29E04100F75875 /* SUGBeaconManager.h */,
-				3A1A562E1A29E04100F75875 /* SUGBeaconManager.m */,
+				3A1A56341A29E79100F75875 /* Beacon */,
 			);
 			path = SugarBuddy;
 			sourceTree = "<group>";
@@ -138,6 +143,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3A1A56341A29E79100F75875 /* Beacon */ = {
+			isa = PBXGroup;
+			children = (
+				3A1A562D1A29E04100F75875 /* SUGBeaconManager.h */,
+				3A1A562E1A29E04100F75875 /* SUGBeaconManager.m */,
+				3A1A56301A29E77E00F75875 /* SUGBeaconBroadcaster.h */,
+				3A1A56311A29E77E00F75875 /* SUGBeaconBroadcaster.m */,
+			);
+			name = Beacon;
+			sourceTree = "<group>";
+		};
 		94BF294C10D3FE72FD738D7A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 		C0548EE6F639B53274E5D801 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */,
 				DC630F1BE9678E9EB504666E /* libPods.a */,
 			);
 			name = Frameworks;
@@ -290,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */,
 				3A1A560C1A29D58900F75875 /* ViewController.m in Sources */,
 				3A1A562F1A29E04100F75875 /* SUGBeaconManager.m in Sources */,
 				3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */,

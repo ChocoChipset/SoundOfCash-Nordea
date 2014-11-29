@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class SUGBeaconBroadcaster;
+
 @interface SUGBeaconManager : NSObject
 
-@property (nonatomic) id broadcaster;
+@property (nonatomic) SUGBeaconBroadcaster *broadcaster;
 @property (nonatomic) id receiver;
 
 + (instancetype)sharedManager;
