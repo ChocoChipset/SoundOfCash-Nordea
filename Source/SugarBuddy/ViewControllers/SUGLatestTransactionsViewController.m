@@ -23,7 +23,16 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 @implementation SUGLatestTransactionsViewController
 
-
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (!(self = [super initWithCoder:aDecoder])) {
+        return nil;
+    }
+    
+    _viewModel = [[SUGLatestTransactionsViewModel alloc] initWithTransactions:nil];
+    
+    return self;
+}
 
 
 #pragma mark - View Lifecycle
@@ -40,6 +49,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 - (void)reloadUIData
 {
+    self.title = @"Recent Transactions";
     [self.collectionView reloadData];
 }
 
