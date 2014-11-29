@@ -22,12 +22,13 @@ static SUGBackendManager *static_backendManager = nil;
     return static_backendManager;
 }
 
-- (NSArray*)getTransactions
+- (NSArray*)getTransactions:(NSString*)accountID
 {
-    NSLog(@"get transactions");
+    NSLog(@"get transactions for account %@", accountID);
     
+    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/transactions?account=%@", accountID];
     UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest *request) {
-        [request setUrl:@"https://soundofcash.mybluemix.net/api/transactions?account=mynordeaid"];
+        [request setUrl:url];
     }] asJson];
     NSDictionary *responseBody = [[response body] object];
     return (NSArray*) [responseBody objectForKey:@"transactions"];
@@ -73,11 +74,11 @@ static SUGBackendManager *static_backendManager = nil;
     return [[response body] object];
 }
 
-- (NSDictionary*)joinSplitBill:(NSString*)billID
+- (NSDictionary*)joinSplitBill:(NSString*)billID withAccount:(NSString*)accountID
 {
-    NSLog(@"join split bill %@", billID);
+    NSLog(@"join split bill %@ for account %@", billID, accountID);
     
-    NSDictionary* parameters = @{@"action": @"join", @"account": @"nordeaaccount"};
+    NSDictionary* parameters = @{@"action": @"join", @"account": accountID};
     NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/bills/%@", billID];
     UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
         [request setUrl:url];
