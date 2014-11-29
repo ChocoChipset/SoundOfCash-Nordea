@@ -55,9 +55,10 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 
 - (void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
 {
-    NSLog(@"%d", RSSI);
+    NSLog(@"%@", peripheral.name);
     
     if (RSSI > SUGStartMenuBeaconThreshold) {
+        
         [self performSegueWithIdentifier:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby
                                   sender:nil];
     }

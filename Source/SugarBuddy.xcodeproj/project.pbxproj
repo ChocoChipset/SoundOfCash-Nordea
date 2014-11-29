@@ -28,6 +28,7 @@
 		3A6AEB831A2A01DF0099B376 /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AEB821A2A01DF0099B376 /* icon_person.png */; };
 		3A6AEB861A2A03F70099B376 /* SUGBackendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB851A2A03F70099B376 /* SUGBackendManager.m */; };
 		3A6AEB8D1A2A0BB00099B376 /* UIColor+SugarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */; };
+		3AC27B7D1A2A6E2E00DEFB81 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */; };
 		4B4652EE1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */; };
 		4B4652F01A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
@@ -84,6 +85,8 @@
 		3A6AEB851A2A03F70099B376 /* SUGBackendManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBackendManager.m; sourceTree = "<group>"; };
 		3A6AEB8B1A2A0BB00099B376 /* UIColor+SugarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SugarColors.h"; path = "Categories/UIColor+SugarColors.h"; sourceTree = "<group>"; };
 		3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SugarColors.m"; path = "Categories/UIColor+SugarColors.m"; sourceTree = "<group>"; };
+		3AC27B7B1A2A6E2E00DEFB81 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashing.h"; path = "Categories/NSString+Hashing.h"; sourceTree = "<group>"; };
+		3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashing.m"; path = "Categories/NSString+Hashing.m"; sourceTree = "<group>"; };
 		4B4652EC1A2A236B00ED6789 /* SUGBeaconSignalCruncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconSignalCruncher.h; sourceTree = "<group>"; };
 		4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSignalCruncher.m; sourceTree = "<group>"; };
 		4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSinganCruncherTests.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				3A1A56121A29D58900F75875 /* LaunchScreen.xib */,
 				3A1A56031A29D58900F75875 /* Supporting Files */,
 				3A6AEB731A29F5AB0099B376 /* Resources */,
+				3AC27B7B1A2A6E2E00DEFB81 /* NSString+Hashing.h */,
+				3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */,
 			);
 			path = SugarBuddy;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				3A6AEB861A2A03F70099B376 /* SUGBackendManager.m in Sources */,
 				3A6AEB8D1A2A0BB00099B376 /* UIColor+SugarColors.m in Sources */,
 				3A4710141A2A2C8400727CAC /* SUGStartMenuViewController.m in Sources */,
+				3AC27B7D1A2A6E2E00DEFB81 /* NSString+Hashing.m in Sources */,
 				3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */,
 				4B4652EE1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m in Sources */,
 				3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */,
