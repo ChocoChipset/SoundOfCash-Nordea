@@ -1,7 +1,6 @@
 #import "SUGBeaconManager.h"
 #import "SUGBeaconBroadcaster.h"
 
-
 static SUGBeaconManager *static_beaconManager = nil;
 
 @interface SUGBeaconManager ()
@@ -32,7 +31,7 @@ static SUGBeaconManager *static_beaconManager = nil;
     }
     
     _broadcaster = [[SUGBeaconBroadcaster alloc] init];
-    
+    _receiver = [SUGBea]
     
     return self;
 }

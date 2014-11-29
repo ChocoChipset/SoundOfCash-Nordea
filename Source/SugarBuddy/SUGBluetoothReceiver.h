@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@protocol CoreBluetoothDelegate
+@protocol SUGBluetoothReceiverDelegate
 @optional
 - (void)didFindBeacon;
 - (void)didConnectToBeacon;
@@ -19,10 +19,10 @@
 - (void)didConnectToListener;
 @end
 
-@interface CoreBluetoothController : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface SUGBluetoothReceiver : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property (nonatomic, strong) CBPeripheral *pairedPeripheral;
-@property (nonatomic, weak) id <CoreBluetoothDelegate> delegate;
+@property (nonatomic, weak) id <SUGBluetoothReceiverDelegate> delegate;
 @property (nonatomic, strong) CBCentralManager *manager;
 @property (nonatomic, getter=isConnected) BOOL connected;
 

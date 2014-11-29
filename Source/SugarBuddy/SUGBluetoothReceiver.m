@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Estimote, Inc. All rights reserved.
 //
 
-#import "CoreBluetoothController.h"
+#import "SUGBluetoothReceiver.h"
 
-@interface CoreBluetoothController ()
+@interface SUGBluetoothReceiver ()
 
 @property (nonatomic, strong) NSTimer *readRSSITimer;
 @property (nonatomic, strong) NSMutableArray *rssiArray;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation CoreBluetoothController
+@implementation SUGBluetoothReceiver
 
 - (id)init {
 	self = [super init];
@@ -28,16 +28,6 @@
 	}
     
     return self;
-}
-
-+ (id)sharedInstance
-{
-	static CoreBluetoothController *this = nil;
-    
-	if (!this)
-		this = [[CoreBluetoothController alloc] init];
-    
-	return this;
 }
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
