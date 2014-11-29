@@ -12,3 +12,5 @@ NSString * const SUGBTServiceLocalNameKey = @"SugarBuddy";
 NSString * const SUGTransitionIDForBuddiesTransition = @"PushTransactionBuddies";
 
 NSString * const SUGTransitionIDForPushLatestTransactions = @"PushLatestTransactions";
+
+NSString * const SUGTransitionIDForPushTransactionBuddiesAsSugarBaby = @"PushTransactionBuddiesAsSugarBaby";

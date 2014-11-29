@@ -8,26 +8,59 @@
 
 #import "SUGStartMenuViewController.h"
 #import "SUGLatestTransactionsViewController.h"
+#import "SUGTransactionBuddiesViewController.h"
+#import "SUGTransactionBuddiesViewModel.h"
 
+const NSInteger SUGStartMenuBeaconThreshold = -30;
+
+
+@interface SUGStartMenuViewController () <SUGBeaconReceiverDelegate>
+
+@end
 
 @implementation SUGStartMenuViewController
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:SUGTransitionIDForPushLatestTransactions]) {
-        SUGLatestTransactionsViewController *nextVC = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby]) {
+        SUGTransactionBuddiesViewController *nextVC = segue.destinationViewController;
+        
+        id transaction = nil;
+        
+        nextVC.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:transaction];
+        nextVC.viewModel.sugarDaddy = NO;
     }
 }
 
--(void)joinChipInDidTouchUp:(UIButton *)button
+- (void)viewWillAppear:(BOOL)animated
 {
-    [[SUGBeaconManager sharedManager].broadcaster startBroadCasting];
+    [SUGBeaconManager sharedManager].receiver.delegate = self;
+    [[SUGBeaconManager sharedManager].receiver startReadingRSSI];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[SUGBeaconManager sharedManager].receiver stopReadingRSSI];
 }
 
 - (void)startChipInDidTouchUp:(UIButton *)button
 {
     [self performSegueWithIdentifier:SUGTransitionIDForPushLatestTransactions sender:nil];
+}
+
+
+#pragma mark - SUGBeaconReceiverDelegate
+
+
+- (void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
+{
+    NSLog(@"%d", RSSI);
+    
+    if (RSSI > SUGStartMenuBeaconThreshold) {
+        [self performSegueWithIdentifier:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby
+                                  sender:nil];
+    }
 }
 
 @end

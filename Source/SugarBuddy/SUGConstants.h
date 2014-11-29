@@ -11,3 +11,4 @@ extern NSString * const SUGBTServiceLocalNameKey;
 
 extern NSString * const SUGTransitionIDForBuddiesTransition;
 extern NSString * const SUGTransitionIDForPushLatestTransactions;
+extern NSString * const SUGTransitionIDForPushTransactionBuddiesAsSugarBaby;

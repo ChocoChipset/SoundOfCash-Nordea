@@ -43,11 +43,21 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     [super viewDidLoad];
     
     [self reloadUIData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     if (self.self.viewModel.isSugarDaddy) {
-        [SUGBeaconManager sharedManager].receiver.delegate = self;
-        [[SUGBeaconManager sharedManager].receiver startReadingRSSI];
+        [[SUGBeaconManager sharedManager].broadcaster startBroadCasting];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[SUGBeaconManager sharedManager].receiver stopReadingRSSI];
+    [[SUGBeaconManager sharedManager].broadcaster stopBroadCasting];
 }
 
 #pragma mark -

@@ -351,6 +351,7 @@
 				TargetAttributes = {
 					3A1A55FF1A29D58900F75875 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 3SQD7PD582;
 					};
 					3A1A56181A29D58900F75875 = {
 						CreatedOnToolsVersion = 6.1;
@@ -575,10 +576,13 @@
 			baseConfigurationReference = EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = SugarBuddy/SugarBuddy.pch;
 				INFOPLIST_FILE = SugarBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -587,10 +591,13 @@
 			baseConfigurationReference = D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = SugarBuddy/SugarBuddy.pch;
 				INFOPLIST_FILE = SugarBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

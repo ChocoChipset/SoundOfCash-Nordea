@@ -62,7 +62,7 @@
     
     self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString: SUGBTCharacteristicUUID]
                                                                      properties:CBCharacteristicPropertyNotify
-                                                                          value:[@"IDOfDevice" dataUsingEncoding:NSUTF8StringEncoding]
+                                                                          value:nil
                                                                     permissions:CBAttributePermissionsReadable];
     
     CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:SUGBTServiceUUID]

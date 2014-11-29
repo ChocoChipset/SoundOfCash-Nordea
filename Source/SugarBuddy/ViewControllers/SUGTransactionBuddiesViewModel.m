@@ -21,10 +21,6 @@
 
 #pragma mark -
 
-- (BOOL)isSugarDaddy
-{
-    return YES;
-}
 
 - (NSString *)transactionTitle
 {
