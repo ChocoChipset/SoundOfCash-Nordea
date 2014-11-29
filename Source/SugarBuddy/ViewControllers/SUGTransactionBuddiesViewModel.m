@@ -19,4 +19,23 @@
     return self;
 }
 
+#pragma mark - 
+
+
+- (NSInteger)numberOfSections
+{
+    return 1;
+}
+
+- (NSInteger)numberOfItemsForSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
+{
+    return @"test";
+}
+
+
 @end

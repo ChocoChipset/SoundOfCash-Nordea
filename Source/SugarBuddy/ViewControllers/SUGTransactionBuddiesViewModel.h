@@ -8,7 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+
 @interface SUGTransactionBuddiesViewModel : NSObject
+
+@property (nonatomic) NSInteger numberOfSections;
+
+- (NSInteger)numberOfItemsForSection:(NSInteger)section;
+
+- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath;
+
+
+
 
 - (instancetype)initWithTransaction:(NSDictionary *)transaction;
 

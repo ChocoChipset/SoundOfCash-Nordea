@@ -20,7 +20,8 @@
 		3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */; };
 		3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */; };
 		3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */; };
-		3A6AEB6A1A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB691A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.m */; };
+		3A6AEB6D1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */; };
+		3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +61,10 @@
 		3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconReceiver.m; sourceTree = "<group>"; };
 		3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewController.h; path = ViewControllers/SUGTransactionBuddiesViewController.h; sourceTree = "<group>"; };
 		3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGTransactionBuddiesViewController.m; path = ViewControllers/SUGTransactionBuddiesViewController.m; sourceTree = "<group>"; };
-		3A6AEB681A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewModel.h; path = ViewControllers/SUGTransactionBuddiesViewModel.h; sourceTree = "<group>"; };
-		3A6AEB691A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGTransactionBuddiesViewModel.m; path = ViewControllers/SUGTransactionBuddiesViewModel.m; sourceTree = "<group>"; };
+		3A6AEB6B1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewModel.h; path = ViewControllers/SUGTransactionBuddiesViewModel.h; sourceTree = "<group>"; };
+		3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGTransactionBuddiesViewModel.m; path = ViewControllers/SUGTransactionBuddiesViewModel.m; sourceTree = "<group>"; };
+		3A6AEB6E1A29F3FC0099B376 /* SUGBuddyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGBuddyViewCell.h; path = Views/SUGBuddyViewCell.h; sourceTree = "<group>"; };
+		3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGBuddyViewCell.m; path = Views/SUGBuddyViewCell.m; sourceTree = "<group>"; };
 		D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC630F1BE9678E9EB504666E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				3A1A562A1A29DE1500F75875 /* SUGConstants.m */,
 				3A1A562C1A29DF2B00F75875 /* SugarBuddy.pch */,
 				3A1A56341A29E79100F75875 /* Beacon */,
+				3A6AEB6E1A29F3FC0099B376 /* SUGBuddyViewCell.h */,
+				3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */,
 			);
 			path = SugarBuddy;
 			sourceTree = "<group>";
@@ -169,10 +174,10 @@
 		3A6AEB641A29EEB00099B376 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A6AEB6B1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.h */,
+				3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */,
 				3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */,
 				3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */,
-				3A6AEB681A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.h */,
-				3A6AEB691A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */,
+				3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */,
 				3A1A560C1A29D58900F75875 /* ViewController.m in Sources */,
 				3A1A562F1A29E04100F75875 /* SUGBeaconManager.m in Sources */,
 				3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */,
@@ -338,7 +344,7 @@
 				3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */,
 				3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */,
 				3A1A56061A29D58900F75875 /* main.m in Sources */,
-				3A6AEB6A1A29EF0D0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */,
+				3A6AEB6D1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
