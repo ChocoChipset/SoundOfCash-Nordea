@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SUGBackendManager.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[SUGBeaconManager sharedManager] initialize];
-    
+    NSLog(@"deviceID: %@", [[SUGBackendManager sharedManager] deviceID]);
     return YES;
 }
 
