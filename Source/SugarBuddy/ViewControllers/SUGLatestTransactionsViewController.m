@@ -1,3 +1,4 @@
+
 //
 //  SUGLatestTransactionsViewController.m
 //  SugarBuddy
@@ -46,7 +47,22 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     
     [self reloadUIData];
     
-    [[SUGBackendManager sharedManager] getTransactions];
+    // sugar daddy flow
+    SUGBackendManager *backend = [SUGBackendManager sharedManager];
+    NSArray *transactions = [backend getTransactions];
+    NSDictionary *firstTransaction = transactions[0];
+    NSString *firstTransactionID = [firstTransaction objectForKey:@"id"];
+    NSDictionary *splitBill = [backend createSplitBill:firstTransactionID];
+    NSString *billID = [splitBill objectForKey:@"id"];
+    NSDictionary *commitedBill = [backend commitSplitBill:billID];
+    
+    // sugar baby flow
+    NSMutableArray *visibleBeacons = [[NSMutableArray alloc] init];
+    [visibleBeacons addObject:@"beaconid1"];
+    [visibleBeacons addObject:@"beaconid2"];
+    splitBill = [backend discoverSplitBill:visibleBeacons];
+    billID = [splitBill objectForKey:@"id"];
+    splitBill = [backend joinSplitBill:billID];
 }
 
 #pragma mark - Segue
