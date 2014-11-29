@@ -10,6 +10,6 @@ Team: The Sound of Cash
 
 Members:
 
-* Daniele Sluijters
-* Marc  Bruggmann
-* Hector Zarate
+* [Daniele Sluijters](https://github.com/daenney) 
+* [Marc  Bruggmann](https://github.com/mbruggmann)
+* [Hector Zarate](https://github.com/ioscowboy)
