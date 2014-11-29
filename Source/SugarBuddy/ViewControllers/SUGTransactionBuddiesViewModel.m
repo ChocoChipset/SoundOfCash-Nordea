@@ -47,7 +47,9 @@
 
 - (NSString *)transactionMetadataTitle
 {
-    return [NSString stringWithFormat:@"%@ %@", self.transaction[@"transaction"][@"amount"], self.transaction[@"transaction"][@"currency"]];
+    NSString *totalAmountString = [NSString stringWithFormat:@"Total: %@ %@", self.transaction[@"transaction"][@"amount"], self.transaction[@"transaction"][@"currency"]];
+    
+    return totalAmountString;
 
 }
 
