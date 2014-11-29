@@ -23,6 +23,8 @@
 		3A6AEB6D1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */; };
 		3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */; };
 		3A6AEB721A29F5A70099B376 /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6AEB711A29F5A70099B376 /* icon_person.png */; };
+		3A6AEB761A29FD2B0099B376 /* SUGLatestTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB751A29FD2B0099B376 /* SUGLatestTransactionsViewController.m */; };
+		3A6AEB7B1A29FD640099B376 /* SUGLatestTransactionsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB7A1A29FD640099B376 /* SUGLatestTransactionsViewModel.m */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,10 @@
 		3A6AEB6E1A29F3FC0099B376 /* SUGBuddyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGBuddyViewCell.h; path = Views/SUGBuddyViewCell.h; sourceTree = "<group>"; };
 		3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGBuddyViewCell.m; path = Views/SUGBuddyViewCell.m; sourceTree = "<group>"; };
 		3A6AEB711A29F5A70099B376 /* icon_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_person.png; path = ../../../../../../Downloads/icon_10580/icon_person.png; sourceTree = "<group>"; };
+		3A6AEB741A29FD2B0099B376 /* SUGLatestTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGLatestTransactionsViewController.h; path = ViewControllers/SUGLatestTransactionsViewController.h; sourceTree = "<group>"; };
+		3A6AEB751A29FD2B0099B376 /* SUGLatestTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGLatestTransactionsViewController.m; path = ViewControllers/SUGLatestTransactionsViewController.m; sourceTree = "<group>"; };
+		3A6AEB791A29FD640099B376 /* SUGLatestTransactionsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGLatestTransactionsViewModel.h; path = ViewControllers/SUGLatestTransactionsViewModel.h; sourceTree = "<group>"; };
+		3A6AEB7A1A29FD640099B376 /* SUGLatestTransactionsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGLatestTransactionsViewModel.m; path = ViewControllers/SUGLatestTransactionsViewModel.m; sourceTree = "<group>"; };
 		D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC630F1BE9678E9EB504666E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,10 +183,8 @@
 		3A6AEB641A29EEB00099B376 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A6AEB6B1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.h */,
-				3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */,
-				3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */,
-				3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */,
+				3A6AEB771A29FD380099B376 /* TransactionBuddies */,
+				3A6AEB781A29FD420099B376 /* Transactions */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -191,6 +195,28 @@
 				3A6AEB711A29F5A70099B376 /* icon_person.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		3A6AEB771A29FD380099B376 /* TransactionBuddies */ = {
+			isa = PBXGroup;
+			children = (
+				3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */,
+				3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */,
+				3A6AEB6B1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.h */,
+				3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */,
+			);
+			name = TransactionBuddies;
+			sourceTree = "<group>";
+		};
+		3A6AEB781A29FD420099B376 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				3A6AEB741A29FD2B0099B376 /* SUGLatestTransactionsViewController.h */,
+				3A6AEB751A29FD2B0099B376 /* SUGLatestTransactionsViewController.m */,
+				3A6AEB791A29FD640099B376 /* SUGLatestTransactionsViewModel.h */,
+				3A6AEB7A1A29FD640099B376 /* SUGLatestTransactionsViewModel.m */,
+			);
+			name = Transactions;
 			sourceTree = "<group>";
 		};
 		94BF294C10D3FE72FD738D7A /* Pods */ = {
@@ -347,10 +373,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6AEB7B1A29FD640099B376 /* SUGLatestTransactionsViewModel.m in Sources */,
 				3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */,
 				3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */,
 				3A1A560C1A29D58900F75875 /* ViewController.m in Sources */,
 				3A1A562F1A29E04100F75875 /* SUGBeaconManager.m in Sources */,
+				3A6AEB761A29FD2B0099B376 /* SUGLatestTransactionsViewController.m in Sources */,
 				3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */,
 				3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */,
 				3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */,
