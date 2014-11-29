@@ -150,8 +150,6 @@
 				3A1A56121A29D58900F75875 /* LaunchScreen.xib */,
 				3A1A56031A29D58900F75875 /* Supporting Files */,
 				3A6AEB731A29F5AB0099B376 /* Resources */,
-				3AC27B7B1A2A6E2E00DEFB81 /* NSString+Hashing.h */,
-				3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */,
 			);
 			path = SugarBuddy;
 			sourceTree = "<group>";
@@ -262,6 +260,7 @@
 		3A6AEB7D1A29FF4D0099B376 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3AC27B7E1A2A824C00DEFB81 /* Categories */,
 				3A6AEB871A2A03FE0099B376 /* BackendManager */,
 				3A1A56071A29D58900F75875 /* AppDelegate.h */,
 				3A1A56081A29D58900F75875 /* AppDelegate.m */,
@@ -270,8 +269,6 @@
 				3A1A56341A29E79100F75875 /* iBeacon */,
 				3A6AEB7C1A29FF460099B376 /* Views */,
 				3A6AEB641A29EEB00099B376 /* ViewControllers */,
-				3A6AEB8B1A2A0BB00099B376 /* UIColor+SugarColors.h */,
-				3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -291,6 +288,17 @@
 				3A6AEB851A2A03F70099B376 /* SUGBackendManager.m */,
 			);
 			name = BackendManager;
+			sourceTree = "<group>";
+		};
+		3AC27B7E1A2A824C00DEFB81 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3A6AEB8B1A2A0BB00099B376 /* UIColor+SugarColors.h */,
+				3A6AEB8C1A2A0BB00099B376 /* UIColor+SugarColors.m */,
+				3AC27B7B1A2A6E2E00DEFB81 /* NSString+Hashing.h */,
+				3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		94BF294C10D3FE72FD738D7A /* Pods */ = {
