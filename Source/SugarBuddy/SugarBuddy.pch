@@ -1,0 +1,17 @@
+//
+//  SugarBuddy.pch
+//  SugarBuddy
+//
+//  Created by Hector Zarate on 11/29/14.
+//  Copyright (c) 2014 Hector Zarate. All rights reserved.
+//
+
+#ifndef SugarBuddy_SugarBuddy_pch
+#define SugarBuddy_SugarBuddy_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "SUGConstants.h"
+
+#endif
