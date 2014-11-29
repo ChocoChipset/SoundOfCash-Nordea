@@ -7,7 +7,6 @@
 //
 
 #import "CoreBluetoothController.h"
-#import "BluetoothServices.h"
 
 @interface CoreBluetoothController ()
 
@@ -26,7 +25,6 @@
         
 		self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
         _rssiArrayIndex = 0;
-        _isConnected = NO;
 	}
     
     return self;
@@ -60,7 +58,7 @@
     
     else {
         
-        NSArray *uuidArray = [NSArray arrayWithObjects:[CBUUID UUIDWithString:SERVICE_UUID], nil];
+        NSArray *uuidArray = [NSArray arrayWithObjects:[CBUUID UUIDWithString:SUGBTServiceLocalNameKey], nil];
         NSDictionary *options = [NSDictionary dictionaryWithObject: [NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
         
         [self.manager scanForPeripheralsWithServices:uuidArray options:options];
@@ -80,13 +78,13 @@
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     NSLog(@"Peripheral Connected");
-    _isConnected = YES;
+    self.connected = YES;
     
     [self.manager stopScan];
     peripheral.delegate = self;
     
     // Search only for services that match our UUID
-    [peripheral discoverServices:@[[CBUUID UUIDWithString:SERVICE_UUID]]];
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:SUGBTServiceLocalNameKey]]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
@@ -95,7 +93,7 @@
     if ([tempDelegate respondsToSelector:@selector(didUpdateRSSI:)])
         [self.delegate didUpdateRSSI:-100];
     
-    _isConnected = NO;
+    self.connected = NO;
 }
 
 #pragma mark - CBPeripheral delegate methods
@@ -109,7 +107,7 @@
         
     // Loop through the newly filled peripheral.services array, just in case there's more than one.
     for (CBService *service in peripheral.services) {
-        [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:CHARACTERISTIC_UUID]] forService:service];
+        [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:SUGBTCharacteristicUUID]] forService:service];
     }
 }
 
@@ -122,7 +120,7 @@
     
     for (CBCharacteristic *characteristic in service.characteristics) {
         
-        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:CHARACTERISTIC_UUID]]) {
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:SUGBTCharacteristicUUID]]) {
             
             id tempDelegate = self.delegate;
             if ([tempDelegate respondsToSelector:@selector(didConnectToBeacon)])    
