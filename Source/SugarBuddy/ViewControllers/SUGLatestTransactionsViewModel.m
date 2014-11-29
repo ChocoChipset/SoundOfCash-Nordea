@@ -56,6 +56,18 @@
     return [NSString stringWithFormat:@"%@ %@", transaction[@"amount"], transaction[@"currency"]];
 }
 
+- (double)latitudeForIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *transaction = [self transactionForIndexPath:indexPath];
+    return [transaction[@"latitude"] doubleValue];
+}
+
+- (double)longitudeForIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *transaction = [self transactionForIndexPath:indexPath];
+    return [transaction[@"longitude"] doubleValue];
+}
+
 - (NSDictionary *)transactionForIndexPath:(NSIndexPath *)indexPath
 {
     return self.transactions[indexPath.row];

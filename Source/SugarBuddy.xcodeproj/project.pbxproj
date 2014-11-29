@@ -31,6 +31,8 @@
 		3AC27B7D1A2A6E2E00DEFB81 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC27B7C1A2A6E2E00DEFB81 /* NSString+Hashing.m */; };
 		4B4652EE1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */; };
 		4B4652F01A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */; };
+		4B90A7F91A2A642A000170E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B90A7F81A2A642A000170E5 /* MapKit.framework */; };
+		4B90A7FB1A2A6ACB000170E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B90A7FA1A2A6ACB000170E5 /* CoreLocation.framework */; };
 		C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC630F1BE9678E9EB504666E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		4B4652EC1A2A236B00ED6789 /* SUGBeaconSignalCruncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUGBeaconSignalCruncher.h; sourceTree = "<group>"; };
 		4B4652ED1A2A236B00ED6789 /* SUGBeaconSignalCruncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSignalCruncher.m; sourceTree = "<group>"; };
 		4B4652EF1A2A341300ED6789 /* SUGBeaconSinganCruncherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconSinganCruncherTests.m; sourceTree = "<group>"; };
+		4B90A7F81A2A642A000170E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4B90A7FA1A2A6ACB000170E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D7A214477B06C0EFAB81085D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC630F1BE9678E9EB504666E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB944253B08D2E8F4B28EB5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B90A7FB1A2A6ACB000170E5 /* CoreLocation.framework in Frameworks */,
+				4B90A7F91A2A642A000170E5 /* MapKit.framework in Frameworks */,
 				3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */,
 				C8A6978661C8D9EC5BC4ABAC /* libPods.a in Frameworks */,
 			);
@@ -299,6 +305,8 @@
 		C0548EE6F639B53274E5D801 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B90A7FA1A2A6ACB000170E5 /* CoreLocation.framework */,
+				4B90A7F81A2A642A000170E5 /* MapKit.framework */,
 				3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */,
 				DC630F1BE9678E9EB504666E /* libPods.a */,
 			);

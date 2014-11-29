@@ -20,6 +20,10 @@
 
 - (NSDictionary *)transactionForIndexPath:(NSIndexPath *)indexPath;
 
+- (double)latitudeForIndexPath:(NSIndexPath *)indexPath;
+
+- (double)longitudeForIndexPath:(NSIndexPath *)indexPath;
+
 - (instancetype)initWithTransactions:(NSArray *)transactions;
 
 
