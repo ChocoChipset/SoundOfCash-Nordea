@@ -18,4 +18,6 @@
 
 + (instancetype)sharedManager;
 
+- (void)initialize;
+
 @end

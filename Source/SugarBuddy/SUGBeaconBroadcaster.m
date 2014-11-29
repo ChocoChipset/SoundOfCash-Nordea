@@ -9,6 +9,8 @@
 #import "SUGBeaconBroadcaster.h"
 
 @interface SUGBeaconBroadcaster () <CBPeripheralManagerDelegate>
+@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
+@property (strong, nonatomic) CBMutableCharacteristic *transferCharacteristic;
 
 @property (nonatomic) NSMutableArray *centrals;
 
@@ -22,8 +24,6 @@
         return nil;
     }
     
-    _peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
-
     _centrals = [NSMutableArray array];
     
     return self;
@@ -36,7 +36,21 @@
     [self.peripheralManager stopAdvertising];
 }
 
+- (void)startBroadCasting
+{
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
+}
+
+- (void)stopBroadCasting
+{
+    [self.peripheralManager stopAdvertising];
+    
+    self.peripheralManager = nil;
+}
+
+
 #pragma mark - CBPeripheral delegate methods
+
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
@@ -48,7 +62,7 @@
     
     self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString: SUGBTCharacteristicUUID]
                                                                      properties:CBCharacteristicPropertyNotify
-                                                                          value:nil
+                                                                          value:[@"IDOfDevice" dataUsingEncoding:NSUTF8StringEncoding]
                                                                     permissions:CBAttributePermissionsReadable];
     
     CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:SUGBTServiceUUID]

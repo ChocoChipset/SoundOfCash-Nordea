@@ -37,5 +37,12 @@ static SUGBeaconManager *static_beaconManager = nil;
     return self;
 }
 
+- (void)initialize
+{
+    /**
+     *  Any setup required at the beginning of the singleton.
+     */
+}
+
 
 @end

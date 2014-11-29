@@ -113,7 +113,7 @@
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:SUGBTCharacteristicUUID]]) {
             
             id tempDelegate = self.delegate;
-            if ([tempDelegate respondsToSelector:@selector(didConnectToBeacon)])    
+            if ([tempDelegate respondsToSelector:@selector(didConnectToBeacon)])
                 [self.delegate didConnectToBeacon];
             
             [self.pairedPeripheral setNotifyValue:YES forCharacteristic:characteristic];

@@ -88,5 +88,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     NSLog(@"%@: %i", peripheral.name, RSSI);
 }
 
+-(void)didConnectToBeacon
+{
+    NSLog(@"BEACON Characteristic");
+}
+
 
 @end

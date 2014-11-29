@@ -12,7 +12,7 @@
 
 @interface SUGBeaconBroadcaster : NSObject
 
-@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
-@property (strong, nonatomic) CBMutableCharacteristic *transferCharacteristic;
+- (void)startBroadCasting;
+- (void)stopBroadCasting;
 
 @end
