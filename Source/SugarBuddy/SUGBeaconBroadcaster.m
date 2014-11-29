@@ -60,9 +60,11 @@
     
     NSLog(@"PeripheralManager powered on.");
     
+    NSString *deviceID = [SUGBackendManager sharedManager].deviceID;
+    
     self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString: SUGBTCharacteristicUUID]
                                                                      properties:CBCharacteristicPropertyNotify
-                                                                          value:nil
+                                                                          value:[deviceID dataUsingEncoding:NSUTF8StringEncoding]
                                                                     permissions:CBAttributePermissionsReadable];
     
     CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:SUGBTServiceUUID]
