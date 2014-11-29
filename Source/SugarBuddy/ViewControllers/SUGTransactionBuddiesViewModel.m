@@ -70,6 +70,15 @@
     return participantAtIndex[@"name"];
 }
 
+- (NSURL *)imageURLForIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *participantAtIndex = ((NSArray *)self.transaction[@"participants"])[indexPath.row];
+    
+    NSString *imageURLString = participantAtIndex[@"image"];
+    
+    return [NSURL URLWithString:imageURLString];
+    
+}
 
 
 @end

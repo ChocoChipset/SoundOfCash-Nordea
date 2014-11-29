@@ -86,7 +86,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     SUGBuddyViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SUGTransactionBuddiesCellID
                                                                            forIndexPath:indexPath];
     cell.textLabel.text = [self.viewModel titleForIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:@"icon_person.png"];
+    cell.imageView.imageURL = [self.viewModel imageURLForIndexPath:indexPath];
     
     return cell;
 }
@@ -99,7 +99,6 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
         NSLog(@"ERROR");
         return;
     }
-    
 
     self.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:response];
     [self reloadUIData];

@@ -23,6 +23,8 @@
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath;
 
+- (NSURL *)imageURLForIndexPath:(NSIndexPath *)indexPath;
+
 - (instancetype)initWithTransaction:(NSDictionary *)transaction;
 
 @end

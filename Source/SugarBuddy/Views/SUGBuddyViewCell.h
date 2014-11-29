@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AsyncImageView/AsyncImageView.h>
+
 
 @interface SUGBuddyViewCell : UICollectionViewCell
 
 @property (nonatomic) IBOutlet UILabel *textLabel;
-@property (nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) IBOutlet AsyncImageView *imageView;
 
 @end

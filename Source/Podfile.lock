@@ -1,13 +1,16 @@
 PODS:
-  - EstimoteSDK (2.2.1)
+  - AsyncImageView (1.5.1)
+  - EstimoteSDK (2.1.5)
   - Unirest (1.1.3)
 
 DEPENDENCIES:
+  - AsyncImageView
   - EstimoteSDK
   - Unirest (~> 1.1.3)
 
 SPEC CHECKSUMS:
-  EstimoteSDK: 3ae789ad99ce7a830d4679b8e4b663449f90ada3
+  AsyncImageView: 388442ae8314a5c99de0d98040c2926826d31da7
+  EstimoteSDK: 1a8184137ab16615b982efd0804aa711a0262ce7
   Unirest: 318cb0193686af2b2a453fa20df5637606033be9
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.34.4
