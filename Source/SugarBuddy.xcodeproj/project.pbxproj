@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A1A56061A29D58900F75875 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A56051A29D58900F75875 /* main.m */; };
 		3A1A56091A29D58900F75875 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A56081A29D58900F75875 /* AppDelegate.m */; };
-		3A1A560C1A29D58900F75875 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A560B1A29D58900F75875 /* ViewController.m */; };
 		3A1A560F1A29D58900F75875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A560D1A29D58900F75875 /* Main.storyboard */; };
 		3A1A56111A29D58900F75875 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A56101A29D58900F75875 /* Images.xcassets */; };
 		3A1A56141A29D58900F75875 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1A56121A29D58900F75875 /* LaunchScreen.xib */; };
@@ -44,8 +43,6 @@
 		3A1A56051A29D58900F75875 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A1A56071A29D58900F75875 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A1A56081A29D58900F75875 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3A1A560A1A29D58900F75875 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3A1A560B1A29D58900F75875 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A1A560E1A29D58900F75875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A1A56101A29D58900F75875 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A1A56131A29D58900F75875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -121,21 +118,11 @@
 		3A1A56021A29D58900F75875 /* SugarBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				3A6AEB641A29EEB00099B376 /* ViewControllers */,
-				3A1A56071A29D58900F75875 /* AppDelegate.h */,
-				3A1A56081A29D58900F75875 /* AppDelegate.m */,
-				3A1A560A1A29D58900F75875 /* ViewController.h */,
-				3A1A560B1A29D58900F75875 /* ViewController.m */,
+				3A6AEB7D1A29FF4D0099B376 /* Classes */,
 				3A1A560D1A29D58900F75875 /* Main.storyboard */,
 				3A1A56101A29D58900F75875 /* Images.xcassets */,
 				3A1A56121A29D58900F75875 /* LaunchScreen.xib */,
 				3A1A56031A29D58900F75875 /* Supporting Files */,
-				3A1A56291A29DE1500F75875 /* SUGConstants.h */,
-				3A1A562A1A29DE1500F75875 /* SUGConstants.m */,
-				3A1A562C1A29DF2B00F75875 /* SugarBuddy.pch */,
-				3A1A56341A29E79100F75875 /* Beacon */,
-				3A6AEB6E1A29F3FC0099B376 /* SUGBuddyViewCell.h */,
-				3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */,
 				3A6AEB731A29F5AB0099B376 /* Resources */,
 			);
 			path = SugarBuddy;
@@ -167,7 +154,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3A1A56341A29E79100F75875 /* Beacon */ = {
+		3A1A56341A29E79100F75875 /* iBeacon */ = {
 			isa = PBXGroup;
 			children = (
 				3A1A562D1A29E04100F75875 /* SUGBeaconManager.h */,
@@ -177,7 +164,7 @@
 				3A1A563A1A29ECA700F75875 /* SUGBeaconReceiver.h */,
 				3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */,
 			);
-			name = Beacon;
+			name = iBeacon;
 			sourceTree = "<group>";
 		};
 		3A6AEB641A29EEB00099B376 /* ViewControllers */ = {
@@ -192,7 +179,8 @@
 		3A6AEB731A29F5AB0099B376 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A6AEB711A29F5A70099B376 /* icon_person.png */,
+				3A1A562C1A29DF2B00F75875 /* SugarBuddy.pch */,
+				3A6AEB7E1A29FF740099B376 /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -217,6 +205,37 @@
 				3A6AEB7A1A29FD640099B376 /* SUGLatestTransactionsViewModel.m */,
 			);
 			name = Transactions;
+			sourceTree = "<group>";
+		};
+		3A6AEB7C1A29FF460099B376 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6AEB6E1A29F3FC0099B376 /* SUGBuddyViewCell.h */,
+				3A6AEB6F1A29F3FC0099B376 /* SUGBuddyViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3A6AEB7D1A29FF4D0099B376 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3A1A56071A29D58900F75875 /* AppDelegate.h */,
+				3A1A56081A29D58900F75875 /* AppDelegate.m */,
+				3A1A56291A29DE1500F75875 /* SUGConstants.h */,
+				3A1A562A1A29DE1500F75875 /* SUGConstants.m */,
+				3A1A56341A29E79100F75875 /* iBeacon */,
+				3A6AEB7C1A29FF460099B376 /* Views */,
+				3A6AEB641A29EEB00099B376 /* ViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3A6AEB7E1A29FF740099B376 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3A6AEB711A29F5A70099B376 /* icon_person.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		94BF294C10D3FE72FD738D7A /* Pods */ = {
@@ -376,7 +395,6 @@
 				3A6AEB7B1A29FD640099B376 /* SUGLatestTransactionsViewModel.m in Sources */,
 				3A1A56321A29E77E00F75875 /* SUGBeaconBroadcaster.m in Sources */,
 				3A6AEB701A29F3FC0099B376 /* SUGBuddyViewCell.m in Sources */,
-				3A1A560C1A29D58900F75875 /* ViewController.m in Sources */,
 				3A1A562F1A29E04100F75875 /* SUGBeaconManager.m in Sources */,
 				3A6AEB761A29FD2B0099B376 /* SUGLatestTransactionsViewController.m in Sources */,
 				3A1A562B1A29DE1500F75875 /* SUGConstants.m in Sources */,
