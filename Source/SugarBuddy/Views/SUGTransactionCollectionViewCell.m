@@ -14,6 +14,15 @@
 {
     [super setHighlighted:highlighted];
     
+    self.backgroundColor = (highlighted ? [UIColor SUGWhiteColor] : [UIColor SUGBlueBackgroundColor]);
+    
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    
+    self.backgroundColor = (selected ? [UIColor SUGWhiteColor] : [UIColor SUGBlueBackgroundColor]);
 }
 
 @end
