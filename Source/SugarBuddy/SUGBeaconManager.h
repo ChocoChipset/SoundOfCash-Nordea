@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SUGBeaconBroadcaster.h"
+#import "SUGBeaconReceiver.h"
 
-@class SUGBeaconBroadcaster;
 
 @interface SUGBeaconManager : NSObject
 
 @property (nonatomic) SUGBeaconBroadcaster *broadcaster;
-@property (nonatomic) id receiver;
+@property (nonatomic) SUGBeaconReceiver *receiver;
 
 + (instancetype)sharedManager;
 

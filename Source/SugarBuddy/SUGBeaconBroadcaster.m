@@ -23,7 +23,7 @@
     }
     
     _peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
-    
+
     _centrals = [NSMutableArray array];
     
     return self;
