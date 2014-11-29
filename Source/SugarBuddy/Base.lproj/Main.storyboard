@@ -11,6 +11,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ss8-nA-0Jf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.10980392156862745" green="0.15294117647058825" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -24,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-347.73333333333335" y="413.69333333333333"/>
         </scene>
-        <!--I WANT TO-->
+        <!--Home-->
         <scene sceneID="nyO-Ib-Kda">
             <objects>
                 <viewController id="X5T-2i-0gH" customClass="SUGStartMenuViewController" sceneMemberID="viewController">
@@ -57,7 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="I WANT TO" id="hxk-X1-7Dd"/>
+                    <navigationItem key="navigationItem" title="Home" id="hxk-X1-7Dd"/>
                     <connections>
                         <segue destination="Kwn-62-kgi" kind="push" identifier="PushLatestTransactions" id="wYg-bX-1oW"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="PushTransactionBuddiesAsSugarBaby" id="DQJ-Ct-G4v"/>
@@ -67,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="45" y="413"/>
         </scene>
-        <!--Transaction Buddies View Controller-->
+        <!--Chip In!-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SUGTransactionBuddiesViewController" sceneMemberID="viewController">
@@ -144,7 +145,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tMe-Sf-dmb"/>
+                    <navigationItem key="navigationItem" title="Chip In!" id="tMe-Sf-dmb">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="5dN-l4-ELs">
+                            <color key="tintColor" red="1" green="0.87450980392156863" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="lcB-4z-cgU" id="Kdj-6p-cev"/>
@@ -156,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="402" y="1103"/>
         </scene>
-        <!--Latest Transactions View Controller-->
+        <!--Transactions-->
         <scene sceneID="JMO-pJ-Qdh">
             <objects>
-                <viewController id="Kwn-62-kgi" customClass="SUGLatestTransactionsViewController" sceneMemberID="viewController">
+                <viewController title="Transactions" id="Kwn-62-kgi" customClass="SUGLatestTransactionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXm-zk-W9L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="334" width="320" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ChK-9e-112">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ChK-9e-112">
                                     <size key="itemSize" width="320" height="35"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -218,19 +223,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" id="9TK-NM-4PF">
+                                                    <rect key="frame" x="0.0" y="54" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" red="0.69127881526947021" green="0.72914189100265503" blue="0.75543463230133057" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L9e-M6-9sr">
-                                                    <rect key="frame" x="8" y="8" width="220" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="8" y="17" width="220" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450.00 SEK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JcA-Hu-2Gm">
-                                                    <rect key="frame" x="236" y="8" width="76" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="236" y="17" width="76" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.3210029987373737" green="0.3210029987373737" blue="0.3210029987373737" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -238,6 +248,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <size key="customSize" width="320" height="55"/>
                                         <connections>
                                             <outlet property="detailLabel" destination="JcA-Hu-2Gm" id="gdt-xs-M4u"/>
                                             <outlet property="textLabel" destination="L9e-M6-9sr" id="nFi-Do-dTm"/>
@@ -252,7 +263,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QX9-50-ImC"/>
+                    <navigationItem key="navigationItem" title="Transactions" id="QX9-50-ImC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="DoK-8N-xkk" id="6cl-Ko-Thi"/>

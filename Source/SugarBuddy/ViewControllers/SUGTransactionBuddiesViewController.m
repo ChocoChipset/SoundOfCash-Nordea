@@ -61,7 +61,6 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 - (void)reloadUIData
 {
-    self.title = self.viewModel.transactionTitle;
     self.transactionTotal.text = [self.viewModel transactionMetadataTitle];
     self.totalPerPerson.text = [self.viewModel transactionSubtitle];
 
