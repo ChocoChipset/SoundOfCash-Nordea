@@ -4,4 +4,6 @@
 
 + (instancetype)sharedManager;
 
+- (void)getTransactions;
+
 @end

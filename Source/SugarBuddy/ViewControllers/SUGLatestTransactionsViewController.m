@@ -9,7 +9,7 @@
 #import "SUGLatestTransactionsViewController.h"
 #import "SUGLatestTransactionsViewModel.h"
 #import "SUGTransactionCollectionViewCell.h"
-
+#import "SUGBackendManager.h"
 
 static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
@@ -43,6 +43,8 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     [super viewDidLoad];
     
     [self reloadUIData];
+    
+    [[SUGBackendManager sharedManager] getTransactions];
 }
 
 #pragma mark -

@@ -21,4 +21,9 @@ static SUGBackendManager *static_backendManager = nil;
     return static_backendManager;
 }
 
+- (void)getTransactions
+{
+    NSLog(@"GET Transactions");
+}
+
 @end
