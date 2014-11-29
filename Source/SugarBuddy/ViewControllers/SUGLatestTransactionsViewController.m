@@ -17,7 +17,7 @@
 static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 
-@interface SUGLatestTransactionsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SUGLatestTransactionsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SUGBackendManagerDelegate>
 
 
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
@@ -25,17 +25,6 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 @end
 
 @implementation SUGLatestTransactionsViewController
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (!(self = [super initWithCoder:aDecoder])) {
-        return nil;
-    }
-    
-    _viewModel = [[SUGLatestTransactionsViewModel alloc] initWithTransactions:nil];
-    
-    return self;
-}
 
 
 #pragma mark - View Lifecycle
@@ -47,6 +36,9 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     
     [self reloadUIData];
     
+    [SUGBackendManager sharedManager].delegate = self;
+    [[SUGBackendManager sharedManager] getTransactions];
+    /*
     // sugar daddy flow
     NSString *daddyAccount = @"hectorsaccount";
     SUGBackendManager *backend = [SUGBackendManager sharedManager];
@@ -67,7 +59,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     splitBill = [backend pollSplitBill:billID];
     
     // commit
-    NSDictionary *commitedBill = [backend commitSplitBill:billID];
+    NSDictionary *commitedBill = [backend commitSplitBill:billID];*/
 }
 
 #pragma mark - Segue
@@ -125,6 +117,19 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     cell.detailLabel.text  = [self.viewModel subtitleForIndexPath:indexPath];
     
     return cell;
+}
+
+#pragma mark - 
+
+- (void)backendManager:(SUGBackendManager *)backendManager responseObject:(NSArray *)response
+{
+    if (!response) {
+        NSLog(@"ERROR");
+        return;
+    }
+    
+    self.viewModel = [[SUGLatestTransactionsViewModel alloc] initWithTransactions:response];
+    [self reloadUIData];
 }
 
 @end

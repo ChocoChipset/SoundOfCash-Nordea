@@ -39,22 +39,26 @@
 
 - (NSInteger)numberOfItemsForSection:(NSInteger)section
 {
-    return 9;
+    return self.transactions.count;
 }
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
 {
-    return @"Transaction";
+    NSDictionary *transaction = [self transactionForIndexPath:indexPath];
+    
+    return transaction[@"title"];
 }
 
 - (NSString *)subtitleForIndexPath:(NSIndexPath *)indexPath
 {
-    return @"Subtitle for Transaction";
+    NSDictionary *transaction = [self transactionForIndexPath:indexPath];
+    
+    return [NSString stringWithFormat:@"%@ %@", transaction[@"amount"], transaction[@"currency"]];
 }
 
-- (id)transactionForIndexPath:(NSIndexPath *)indexPath
+- (NSDictionary *)transactionForIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return self.transactions[indexPath.row];
 }
 
 @end

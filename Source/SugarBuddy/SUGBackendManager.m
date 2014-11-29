@@ -23,6 +23,9 @@ static SUGBackendManager *static_backendManager = nil;
     return static_backendManager;
 }
 
+#pragma mark - User ID
+
+
 - (NSString *)deviceID
 {
     return [self sha1: [[UIDevice currentDevice] name]];
@@ -43,16 +46,32 @@ static SUGBackendManager *static_backendManager = nil;
 
 }
 
-- (NSArray*)getTransactions:(NSString*)accountID
+#pragma mark - Delegate Stuff
+
+- (void)notifyDelegateWithResponseObject:(id)responseObject
 {
-    accountID = self.deviceID;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.delegate backendManager:self responseObject:responseObject];
+    });
+}
+
+
+
+#pragma mark - Calls
+
+- (void)getTransactions
+{
+    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/transactions?account=%@", self.deviceID];
     
-    NSString* url = [NSString stringWithFormat:@"https://soundofcash.mybluemix.net/api/transactions?account=%@", accountID];
-    UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest *request) {
+    [[UNIRest get:^(UNISimpleRequest *request) {
         [request setUrl:url];
-    }] asJson];
-    NSDictionary *responseBody = [[response body] object];
-    return (NSArray*) [responseBody objectForKey:@"transactions"];
+    }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        NSDictionary *responseBody = [[jsonResponse body] object];
+        NSArray *responseObject = (NSArray*) [responseBody objectForKey:@"transactions"];
+        
+        [self notifyDelegateWithResponseObject:responseObject];
+
+    }];
 }
 
 - (NSDictionary*)createSplitBill:(NSString*)transactionID
