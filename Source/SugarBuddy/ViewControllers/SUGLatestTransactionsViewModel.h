@@ -18,6 +18,8 @@
 
 - (NSString *)subtitleForIndexPath:(NSIndexPath *)indexPath;
 
+- (id)transactionForIndexPath:(NSIndexPath *)indexPath;
+
 - (instancetype)initWithTransactions:(NSArray *)transactions;
 
 

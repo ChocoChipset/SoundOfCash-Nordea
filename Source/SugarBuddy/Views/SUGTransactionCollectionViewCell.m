@@ -10,6 +10,10 @@
 
 @implementation SUGTransactionCollectionViewCell
 
-
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    
+}
 
 @end

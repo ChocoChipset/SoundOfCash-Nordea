@@ -52,4 +52,9 @@
     return @"Subtitle for Transaction";
 }
 
+- (id)transactionForIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 @end

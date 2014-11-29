@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="423"/>
+            <point key="canvasLocation" x="402" y="1103"/>
         </scene>
         <!--Latest Transactions View Controller-->
         <scene sceneID="JMO-pJ-Qdh">
@@ -199,11 +199,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="DoK-8N-xkk" id="6cl-Ko-Thi"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="PushTransactionBuddies" id="ehK-VQ-Af3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8p-0J-N9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="1103"/>
+            <point key="canvasLocation" x="-15" y="1103"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
