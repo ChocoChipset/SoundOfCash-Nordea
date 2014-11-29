@@ -4,11 +4,11 @@
 
 + (instancetype)sharedManager;
 
-- (NSArray*)getTransactions;
+- (NSArray*)getTransactions:(NSString*)accountID;
 - (NSDictionary*)createSplitBill:(NSString*)transactionID;
 - (NSDictionary*)commitSplitBill:(NSString*)billID;
 - (NSDictionary*)discoverSplitBill:(NSArray*)beaconsIDs;
-- (NSDictionary*)joinSplitBill:(NSString*)billID;
+- (NSDictionary*)joinSplitBill:(NSString*)billID withAccount:(NSString*)accountID;
 - (NSDictionary*)pollSplitBill:(NSString*)billID;
 
 @end
