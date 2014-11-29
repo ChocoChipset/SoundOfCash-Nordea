@@ -13,6 +13,7 @@
 
 @interface SUGTransactionBuddiesViewModel : NSObject
 
+@property (nonatomic, getter=isSugarDaddy) BOOL sugarDaddy;
 @property (nonatomic) NSInteger numberOfSections;
 
 @property (nonatomic) NSString *transactionTitle;

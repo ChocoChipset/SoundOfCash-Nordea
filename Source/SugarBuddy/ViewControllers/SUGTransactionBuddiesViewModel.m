@@ -19,7 +19,12 @@
     return self;
 }
 
-#pragma mark - 
+#pragma mark -
+
+- (BOOL)isSugarDaddy
+{
+    return YES;
+}
 
 - (NSString *)transactionTitle
 {

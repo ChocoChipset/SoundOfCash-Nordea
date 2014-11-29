@@ -14,7 +14,7 @@
 static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 
-@interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource>
+@interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource, SUGBeaconReceiverDelegate>
 
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -43,6 +43,11 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     [super viewDidLoad];
     
     [self reloadUIData];
+    
+    if (self.self.viewModel.isSugarDaddy) {
+        [SUGBeaconManager sharedManager].receiver.delegate = self;
+        [[SUGBeaconManager sharedManager].receiver startReadingRSSI];
+    }
 }
 
 #pragma mark -
@@ -74,5 +79,11 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     
     return cell;
 }
+
+
+#pragma mark - SUGBeaconReceiverDelegate
+
+
+
 
 @end
