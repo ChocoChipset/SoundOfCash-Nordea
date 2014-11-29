@@ -21,6 +21,20 @@
 
 #pragma mark - 
 
+- (NSString *)transactionTitle
+{
+    return @"Dinner";
+}
+
+- (NSString *)transactionSubtitle
+{
+    return @"140 SEK";
+}
+
+- (NSString *)transactionMetadataTitle
+{
+    return @"20 SEK per person";
+}
 
 - (NSInteger)numberOfSections
 {
@@ -34,7 +48,7 @@
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
 {
-    return @"test";
+    return @"Jimmy Neutron";
 }
 
 

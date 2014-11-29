@@ -15,12 +15,13 @@
 
 @property (nonatomic) NSInteger numberOfSections;
 
+@property (nonatomic) NSString *transactionTitle;
+@property (nonatomic) NSString *transactionSubtitle;
+@property (nonatomic) NSString *transactionMetadataTitle;
+
 - (NSInteger)numberOfItemsForSection:(NSInteger)section;
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath;
-
-
-
 
 - (instancetype)initWithTransaction:(NSDictionary *)transaction;
 

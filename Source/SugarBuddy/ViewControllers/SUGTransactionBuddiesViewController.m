@@ -35,6 +35,26 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 }
 
 
+#pragma mark - View Lifecycle
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self reloadUIData];
+}
+
+#pragma mark -
+
+- (void)reloadUIData
+{
+    self.title = self.viewModel.transactionTitle;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return self.viewModel.numberOfSections;
@@ -50,6 +70,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     SUGBuddyViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SUGTransactionBuddiesCellID
                                                                            forIndexPath:indexPath];
     cell.textLabel.text = [self.viewModel titleForIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"icon_person.png"];
     
     return cell;
 }
