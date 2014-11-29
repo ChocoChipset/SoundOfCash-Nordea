@@ -16,6 +16,8 @@
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath;
 
+- (NSString *)subtitleForIndexPath:(NSIndexPath *)indexPath;
+
 - (instancetype)initWithTransactions:(NSArray *)transactions;
 
 

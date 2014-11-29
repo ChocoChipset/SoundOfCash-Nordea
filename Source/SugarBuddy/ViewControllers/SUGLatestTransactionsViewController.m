@@ -8,6 +8,7 @@
 
 #import "SUGLatestTransactionsViewController.h"
 #import "SUGLatestTransactionsViewModel.h"
+#import "SUGTransactionCollectionViewCell.h"
 
 
 static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
@@ -39,7 +40,6 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 - (void)reloadUIData
 {
-
     [self.collectionView reloadData];
 }
 
@@ -58,10 +58,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SUGTransactionBuddiesCellID
+    SUGTransactionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SUGTransactionBuddiesCellID
                                                                        forIndexPath:indexPath];
-//    cell.textLabel.text = [self.viewModel titleForIndexPath:indexPath];
-//    cell.imageView.image = [UIImage imageNamed:@"icon_person.png"];
+    cell.textLabel.text = [self.viewModel titleForIndexPath:indexPath];
+    cell.detailLabel.text  = [self.viewModel subtitleForIndexPath:indexPath];
     
     return cell;
 }

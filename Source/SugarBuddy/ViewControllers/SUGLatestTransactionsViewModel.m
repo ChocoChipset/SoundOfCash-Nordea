@@ -47,5 +47,9 @@
     return @"Transaction";
 }
 
+- (NSString *)subtitleForIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Subtitle for Transaction";
+}
 
 @end
