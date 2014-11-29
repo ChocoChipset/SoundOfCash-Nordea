@@ -147,6 +147,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="lcB-4z-cgU" id="Kdj-6p-cev"/>
+                        <outlet property="totalPerPerson" destination="Zt5-fs-QL2" id="CNt-6Z-raJ"/>
+                        <outlet property="transactionTotal" destination="rNc-sw-b2P" id="gWj-hh-TKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
