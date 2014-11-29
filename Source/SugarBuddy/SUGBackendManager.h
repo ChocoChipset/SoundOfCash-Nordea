@@ -9,5 +9,6 @@
 - (NSDictionary*)commitSplitBill:(NSString*)billID;
 - (NSDictionary*)discoverSplitBill:(NSArray*)beaconsIDs;
 - (NSDictionary*)joinSplitBill:(NSString*)billID;
+- (NSDictionary*)pollSplitBill:(NSString*)billID;
 
 @end

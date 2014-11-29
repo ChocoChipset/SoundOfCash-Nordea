@@ -54,15 +54,19 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     NSString *firstTransactionID = [firstTransaction objectForKey:@"id"];
     NSDictionary *splitBill = [backend createSplitBill:firstTransactionID];
     NSString *billID = [splitBill objectForKey:@"id"];
-    NSDictionary *commitedBill = [backend commitSplitBill:billID];
     
     // sugar baby flow
     NSMutableArray *visibleBeacons = [[NSMutableArray alloc] init];
     [visibleBeacons addObject:@"beaconid1"];
     [visibleBeacons addObject:@"beaconid2"];
-    splitBill = [backend discoverSplitBill:visibleBeacons];
-    billID = [splitBill objectForKey:@"id"];
-    splitBill = [backend joinSplitBill:billID];
+    NSDictionary *discoveredBill = [backend discoverSplitBill:visibleBeacons];
+    discoveredBill = [backend joinSplitBill:[discoveredBill objectForKey:@"id"]];
+    
+    // monitor the bill
+    splitBill = [backend pollSplitBill:billID];
+    
+    // commit
+    NSDictionary *commitedBill = [backend commitSplitBill:billID];
 }
 
 #pragma mark - Segue
