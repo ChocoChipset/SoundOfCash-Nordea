@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Estimote, Inc. All rights reserved.
 //
 
-#import "SUGBluetoothReceiver.h"
+#import "SUGBeaconReceiver.h"
 
-@interface SUGBluetoothReceiver ()
+@interface SUGBeaconReceiver ()
 
 @property (nonatomic, strong) NSTimer *readRSSITimer;
 @property (nonatomic, strong) NSMutableArray *rssiArray;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation SUGBluetoothReceiver
+@implementation SUGBeaconReceiver
 
 - (id)init {
 	self = [super init];

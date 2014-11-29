@@ -1,5 +1,6 @@
 #import "SUGBeaconManager.h"
 #import "SUGBeaconBroadcaster.h"
+#import "SUGBEac"
 
 static SUGBeaconManager *static_beaconManager = nil;
 
