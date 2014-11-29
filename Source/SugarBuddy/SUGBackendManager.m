@@ -7,6 +7,7 @@
 //
 
 #import "SUGBackendManager.h"
+#import <CommonCrypto/CommonDigest.h>
 #import <UNIRest.h>
 
 static SUGBackendManager *static_backendManager = nil;
@@ -24,7 +25,22 @@ static SUGBackendManager *static_backendManager = nil;
 
 - (NSString *)deviceID
 {
-    return [[UIDevice currentDevice] name];
+    return [self sha1: [[UIDevice currentDevice] name]];
+}
+
+-(NSString*) sha1:(NSString*)input
+{
+    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:input.length];
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(data.bytes, data.length, digest);
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+
+    return output;
+
 }
 
 - (NSArray*)getTransactions:(NSString*)accountID
