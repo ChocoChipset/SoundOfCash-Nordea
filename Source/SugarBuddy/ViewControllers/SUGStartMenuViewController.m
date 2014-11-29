@@ -29,7 +29,7 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
         id transaction = nil;
         
         nextVC.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:transaction];
-        nextVC.viewModel.sugarDaddy = NO;
+        nextVC.sugarDaddy = NO;
     }
 }
 

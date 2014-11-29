@@ -18,10 +18,20 @@
 @property (nonatomic) NSString *deviceID;
 
 - (void)getTransactions;
-- (void)createSplitBill:(NSString*)transactionID;
+
+/// Starts transmitting (sugar daddy)
+- (void)createSplitBillWithTransactionID:(NSString*)transactionID;
+
+/// We are done!
 - (void)commitSplitBill:(NSString*)billID;
+
+/// When you look for other beacons
 - (void)discoverSplitBill:(NSArray*)beaconsIDs;
+
+/// do after discover
 - (void)joinSplitBill:(NSString*)billID withAccount:(NSString*)accountID;
+
+/// you can call periodically to update the transaction.
 - (void)pollSplitBill:(NSString*)billID;
 
 @end

@@ -74,8 +74,8 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
         
         id transaction = [self.viewModel transactionForIndexPath:sender];
         
-        nextVC.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:transaction];
-        nextVC.viewModel.sugarDaddy = YES;
+        nextVC.transactionID = transaction[@"id"];
+        nextVC.sugarDaddy = YES;
     }
 }
 

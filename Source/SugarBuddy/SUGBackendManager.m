@@ -74,7 +74,7 @@ static SUGBackendManager *static_backendManager = nil;
     }];
 }
 
-- (NSDictionary*)createSplitBill:(NSString*)transactionID
+- (void)createSplitBillWithTransactionID:(NSString*)transactionID
 {
     NSLog(@"create split bill for transaction %@", transactionID);
     
@@ -83,8 +83,10 @@ static SUGBackendManager *static_backendManager = nil;
     UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
         [request setUrl:@"https://soundofcash.mybluemix.net/api/bills"];
         [request setParameters:parameters];
-    }] asJson];
-    return [[response body] object];
+    }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        NSDictionary *responseBody = [[jsonResponse body] object];
+        [self notifyDelegateWithResponseObject:responseBody];
+    }];
 }
 
 - (NSDictionary*)commitSplitBill:(NSString*)billID

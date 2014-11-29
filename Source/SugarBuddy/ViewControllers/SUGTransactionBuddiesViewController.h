@@ -5,6 +5,9 @@
 
 @interface SUGTransactionBuddiesViewController : UIViewController
 
+@property (nonatomic, getter=isSugarDaddy) BOOL sugarDaddy;
+
 @property (nonatomic) SUGTransactionBuddiesViewModel *viewModel;
+@property (nonatomic) NSString *transactionID;
 
 @end

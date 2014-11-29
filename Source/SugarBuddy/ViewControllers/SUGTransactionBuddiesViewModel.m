@@ -8,6 +8,15 @@
 
 #import "SUGTransactionBuddiesViewModel.h"
 
+
+@interface SUGTransactionBuddiesViewModel ()
+
+@property (nonatomic, strong) NSDictionary *transaction;
+
+@end
+
+
+
 @implementation SUGTransactionBuddiesViewModel
 
 - (instancetype)initWithTransaction:(NSDictionary *)transaction
@@ -15,6 +24,8 @@
     if (!(self = [super init])) {
         return nil;
     }
+    
+    _transaction = transaction;
         
     return self;
 }
@@ -24,17 +35,20 @@
 
 - (NSString *)transactionTitle
 {
-    return @"Dinner";
+    return self.transaction[@"transaction"][@"title"];
 }
 
 - (NSString *)transactionSubtitle
 {
-    return @"140 SEK";
+    NSString *title = [NSString stringWithFormat:@"%@ %@ each", self.transaction[@"splitamount"], self.transaction[@"currency"]];
+    
+    return title;
 }
 
 - (NSString *)transactionMetadataTitle
 {
-    return @"20 SEK per person";
+    return [NSString stringWithFormat:@"%@ %@", self.transaction[@"transaction"][@"amount"], self.transaction[@"transaction"][@"currency"]];
+
 }
 
 - (NSInteger)numberOfSections
@@ -44,13 +58,16 @@
 
 - (NSInteger)numberOfItemsForSection:(NSInteger)section
 {
-    return 2;
+    return ((NSArray *)self.transaction[@"participants"]).count;
 }
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
 {
-    return @"Jimmy Neutron";
+    NSDictionary *participantAtIndex = ((NSArray *)self.transaction[@"participants"])[indexPath.row];
+    
+    return participantAtIndex[@"name"];
 }
+
 
 
 @end

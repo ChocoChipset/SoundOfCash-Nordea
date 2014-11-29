@@ -14,7 +14,8 @@
 static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 
-@interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource, SUGBeaconReceiverDelegate>
+@interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource, SUGBeaconReceiverDelegate, SUGBackendManagerDelegate>
+
 
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -22,17 +23,6 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 
 @implementation SUGTransactionBuddiesViewController
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (!(self = [super initWithCoder:aDecoder])) {
-        return nil;
-    }
-    
-    _viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:nil];
-    
-    return self;
-}
 
 
 #pragma mark - View Lifecycle
@@ -49,7 +39,10 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 {
     [super viewWillAppear:animated];
     
-    if (self.self.viewModel.isSugarDaddy) {
+    if (self.isSugarDaddy) {
+        [[SUGBackendManager sharedManager] createSplitBillWithTransactionID:self.transactionID];
+        [SUGBackendManager sharedManager].delegate = self;
+        
         [[SUGBeaconManager sharedManager].broadcaster startBroadCasting];
     }
 }
@@ -90,17 +83,17 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     return cell;
 }
 
+#pragma mark - SUGBackendManagerDelegate
 
-#pragma mark - SUGBeaconReceiverDelegate
-
--(void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
+- (void)backendManager:(SUGBackendManager *)backendManager responseObject:(id)response
 {
-    NSLog(@"%@: %i", peripheral.name, RSSI);
-}
-
--(void)didConnectToBeacon
-{
-    NSLog(@"BEACON Characteristic");
+    if (!response)  {
+        NSLog(@"ERROR");
+        return;
+    }
+    
+    self.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:response];
+    [self reloadUIData];
 }
 
 
