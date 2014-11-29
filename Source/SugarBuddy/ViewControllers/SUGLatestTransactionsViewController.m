@@ -12,6 +12,8 @@
 #import "SUGTransactionCollectionViewCell.h"
 #import "SUGBackendManager.h"
 #import "SUGTransactionBuddiesViewModel.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 
 static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
@@ -23,6 +25,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) IBOutlet UILabel *transactionTitle;
 @property (nonatomic) IBOutlet UILabel *transactionTotal;
+@property (nonatomic) IBOutlet MKMapView *map;
 
 
 @end
@@ -84,13 +87,17 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 - (void)reloadUIData
 {
-    self.title = @"Recent Transactions";
     self.transactionTitle.text = [self.viewModel titleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     self.transactionTotal.text = [self.viewModel subtitleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     
+    CLLocationCoordinate2D location;
+    location.latitude = [self.viewModel latitudeForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    location.longitude = [self.viewModel longitudeForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (location, 2000, 2000);
+    [self.map setRegion:region animated:NO];
+
     [self.collectionView reloadData];
 }
-
 
 #pragma mark - UICollectionViewDelegate
 
