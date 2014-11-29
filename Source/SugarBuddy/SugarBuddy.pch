@@ -14,5 +14,6 @@
 
 #import "SUGConstants.h"
 #import "UIColor+SugarColors.h"
-
+#import "SUGBackendManager.h"
+#import "SUGBeaconManager.h"
 #endif
