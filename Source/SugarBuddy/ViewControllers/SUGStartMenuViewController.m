@@ -12,6 +12,7 @@
 #import "SUGTransactionBuddiesViewModel.h"
 #import "NSString+Hashing.h"
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 const NSInteger SUGStartMenuBeaconThreshold = -30;
 
@@ -19,6 +20,7 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 @interface SUGStartMenuViewController () <SUGBeaconReceiverDelegate>
 @property (nonatomic) IBOutlet UIImageView *topDownStackLower;
 @property (nonatomic) IBOutlet UIImageView *topDownStackupper;
+@property (nonatomic) SystemSoundID audioOfCashSound;
 @end
 
 @implementation SUGStartMenuViewController
@@ -62,6 +64,21 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 {
     [self performSegueWithIdentifier:SUGTransitionIDForPushLatestTransactions sender:nil];
 }
+
+#pragma mark - IBACtions
+
+- (IBAction)soundButtonDidTouchUpInside:(id)sender
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSString *pewPewPath = [[NSBundle mainBundle]
+                                pathForResource:@"sound-of-cash" ofType:@"mp3"];
+        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &_audioOfCashSound);
+        AudioServicesPlaySystemSound(self.audioOfCashSound);
+    });
+}
+
+
 
 
 #pragma mark - SUGBeaconReceiverDelegate

@@ -69,7 +69,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello!" id="hxk-X1-7Dd"/>
+                    <navigationItem key="navigationItem" title="Hello!" id="hxk-X1-7Dd">
+                        <barButtonItem key="rightBarButtonItem" title="Sound" id="LlS-m4-c9D">
+                            <connections>
+                                <action selector="soundButtonDidTouchUpInside:" destination="X5T-2i-0gH" id="Cob-H6-XlS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="topDownStackLower" destination="mGT-eU-Ilq" id="gVu-W8-JlI"/>
                         <outlet property="topDownStackupper" destination="usp-kC-RlD" id="883-Om-V4l"/>
