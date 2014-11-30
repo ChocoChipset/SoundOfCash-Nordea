@@ -16,7 +16,8 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 
 
 @interface SUGStartMenuViewController () <SUGBeaconReceiverDelegate>
-
+@property (nonatomic) IBOutlet UIImageView *topDownStackLower;
+@property (nonatomic) IBOutlet UIImageView *topDownStackupper;
 @end
 
 @implementation SUGStartMenuViewController

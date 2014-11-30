@@ -64,6 +64,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hxk-X1-7Dd"/>
                     <connections>
+                        <outlet property="topDownStackLower" destination="mGT-eU-Ilq" id="gVu-W8-JlI"/>
+                        <outlet property="topDownStackupper" destination="usp-kC-RlD" id="883-Om-V4l"/>
                         <segue destination="Kwn-62-kgi" kind="push" identifier="PushLatestTransactions" id="wYg-bX-1oW"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="PushTransactionBuddiesAsSugarBaby" id="DQJ-Ct-G4v"/>
                     </connections>
