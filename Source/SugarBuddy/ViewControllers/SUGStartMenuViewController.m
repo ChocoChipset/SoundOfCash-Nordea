@@ -11,12 +11,14 @@
 #import "SUGTransactionBuddiesViewController.h"
 #import "SUGTransactionBuddiesViewModel.h"
 #import "NSString+Hashing.h"
+#import <UIKit/UIKit.h>
 
 const NSInteger SUGStartMenuBeaconThreshold = -30;
 
 
 @interface SUGStartMenuViewController () <SUGBeaconReceiverDelegate>
-
+@property (nonatomic) IBOutlet UIImageView *topDownStackLower;
+@property (nonatomic) IBOutlet UIImageView *topDownStackupper;
 @end
 
 @implementation SUGStartMenuViewController
@@ -35,6 +37,20 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 {
     [SUGBeaconManager sharedManager].receiver.delegate = self;
     [[SUGBeaconManager sharedManager].receiver startReadingRSSI];
+    
+    CGPoint originalCenter = [[self topDownStackupper ] center];
+    CGPoint offScreen = CGPointMake(originalCenter.x+100, originalCenter.y-20);
+    [self topDownStackupper].center = offScreen;
+    [self topDownStackupper].alpha = 0.8;
+    
+    [UIView beginAnimations:@"stack-upper" context:nil];
+    [UIView setAnimationDuration:2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationRepeatCount:INFINITY];
+    [UIView setAnimationRepeatAutoreverses:YES];
+    [self topDownStackupper].center = originalCenter;
+    [self topDownStackupper].alpha = 1.0;
+    [UIView commitAnimations];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
