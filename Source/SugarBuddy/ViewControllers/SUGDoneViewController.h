@@ -10,4 +10,6 @@
 
 @interface SUGDoneViewController : UIViewController
 
+- (IBAction)returnToHomeDidTouchUpInside:(id)sender;
+
 @end
