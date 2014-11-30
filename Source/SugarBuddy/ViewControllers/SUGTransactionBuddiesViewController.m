@@ -5,7 +5,7 @@
 //  Created by Hector Zarate on 11/29/14.
 //  Copyright (c) 2014 Hector Zarate. All rights reserved.
 //
-
+#import <AudioToolbox/AudioToolbox.h>
 #import "SUGTransactionBuddiesViewController.h"
 #import "SUGTransactionBuddiesViewModel.h"
 #import "SUGBuddyViewCell.h"
@@ -16,7 +16,7 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
 
 @interface SUGTransactionBuddiesViewController () <UICollectionViewDataSource, SUGBeaconReceiverDelegate, SUGBackendManagerDelegate>
 
-
+@property (nonatomic) SystemSoundID audioOfCashSound;
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) IBOutlet UILabel *transactionTotal;
 @property (nonatomic) IBOutlet UILabel *totalPerPerson;
@@ -111,6 +111,14 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
         return;
     }
 
+    if (!self.isSugarDaddy) {
+        NSString *pewPewPath = [[NSBundle mainBundle]
+                                pathForResource:@"sound-of-cash" ofType:@"mp3"];
+        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &_audioOfCashSound);
+        AudioServicesPlaySystemSound(self.audioOfCashSound);
+    }
+    
     self.viewModel = [[SUGTransactionBuddiesViewModel alloc] initWithTransaction:response];
     [self reloadUIData];
 
