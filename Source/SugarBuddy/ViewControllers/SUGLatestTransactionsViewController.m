@@ -94,7 +94,11 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
     location.latitude = [self.viewModel latitudeForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     location.longitude = [self.viewModel longitudeForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (location, 2000, 2000);
+    MKPointAnnotation *pin = [[MKPointAnnotation alloc]init];
+    pin.coordinate = location;
+    pin.title = [self.viewModel titleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     [self.map setRegion:region animated:NO];
+    [self.map addAnnotation:pin];
 
     [self.collectionView reloadData];
 }
