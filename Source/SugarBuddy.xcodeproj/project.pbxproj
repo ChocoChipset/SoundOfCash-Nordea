@@ -19,6 +19,7 @@
 		3A1A56361A29E80C00F75875 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1A56351A29E80C00F75875 /* CoreBluetooth.framework */; };
 		3A1A563C1A29ECA700F75875 /* SUGBeaconReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */; };
 		3A3DD6C71A2B266F009CCBFC /* SUGDoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3DD6C61A2B266F009CCBFC /* SUGDoneViewController.m */; };
+		3A3DD6C91A2B37DE009CCBFC /* topdown-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3DD6C81A2B37DE009CCBFC /* topdown-bg.png */; };
 		3A4710141A2A2C8400727CAC /* SUGStartMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4710131A2A2C8400727CAC /* SUGStartMenuViewController.m */; };
 		3A6AEB671A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB661A29EEDF0099B376 /* SUGTransactionBuddiesViewController.m */; };
 		3A6AEB6D1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AEB6C1A29F20C0099B376 /* SUGTransactionBuddiesViewModel.m */; };
@@ -73,6 +74,7 @@
 		3A1A563B1A29ECA700F75875 /* SUGBeaconReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUGBeaconReceiver.m; sourceTree = "<group>"; };
 		3A3DD6C51A2B266F009CCBFC /* SUGDoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGDoneViewController.h; path = ViewControllers/SUGDoneViewController.h; sourceTree = "<group>"; };
 		3A3DD6C61A2B266F009CCBFC /* SUGDoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGDoneViewController.m; path = ViewControllers/SUGDoneViewController.m; sourceTree = "<group>"; };
+		3A3DD6C81A2B37DE009CCBFC /* topdown-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topdown-bg.png"; sourceTree = "<group>"; };
 		3A4710121A2A2C8400727CAC /* SUGStartMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGStartMenuViewController.h; path = ViewControllers/SUGStartMenuViewController.h; sourceTree = "<group>"; };
 		3A4710131A2A2C8400727CAC /* SUGStartMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUGStartMenuViewController.m; path = ViewControllers/SUGStartMenuViewController.m; sourceTree = "<group>"; };
 		3A6AEB651A29EEDF0099B376 /* SUGTransactionBuddiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUGTransactionBuddiesViewController.h; path = ViewControllers/SUGTransactionBuddiesViewController.h; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		3A6AEB7E1A29FF740099B376 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A3DD6C81A2B37DE009CCBFC /* topdown-bg.png */,
 				7B0868111A2B1AB300F76EB2 /* topdown-stack-lower.png */,
 				7B0868121A2B1AB300F76EB2 /* topdown-stack-upper.png */,
 				3A6AEB821A2A01DF0099B376 /* icon_person.png */,
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1A560F1A29D58900F75875 /* Main.storyboard in Resources */,
+				3A3DD6C91A2B37DE009CCBFC /* topdown-bg.png in Resources */,
 				3A6AEB831A2A01DF0099B376 /* icon_person.png in Resources */,
 				3A1A56141A29D58900F75875 /* LaunchScreen.xib in Resources */,
 				7B0868141A2B1AB300F76EB2 /* topdown-stack-upper.png in Resources */,

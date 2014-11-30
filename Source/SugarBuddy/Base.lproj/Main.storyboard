@@ -89,10 +89,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topdown-bg.png" id="Lj1-co-sho">
+                                <rect key="frame" x="79" y="161" width="236" height="286"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lcB-4z-cgU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="399"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="389"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lhr-K5-eMs">
                                     <size key="itemSize" width="288.5" height="253"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -135,28 +139,28 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" id="PBq-CT-f8Q">
-                                <rect key="frame" x="0.0" y="396" width="320" height="108"/>
+                                <rect key="frame" x="0.0" y="397" width="320" height="107"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 SEK each" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zt5-fs-QL2">
-                                        <rect key="frame" x="17" y="53" width="575" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price per person:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rNc-sw-b2P">
+                                        <rect key="frame" x="17" y="20" width="575" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 1,200 SEK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rNc-sw-b2P">
-                                        <rect key="frame" x="17" y="21" width="575" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="0.18039215689999999" green="0.2274509804" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 SEK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zt5-fs-QL2">
+                                        <rect key="frame" x="17" y="43" width="575" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.63921568630000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chip In!" id="tMe-Sf-dmb">
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="5dN-l4-ELs">
@@ -170,7 +174,6 @@
                     <connections>
                         <outlet property="collectionView" destination="lcB-4z-cgU" id="Kdj-6p-cev"/>
                         <outlet property="totalPerPerson" destination="Zt5-fs-QL2" id="CNt-6Z-raJ"/>
-                        <outlet property="transactionTotal" destination="rNc-sw-b2P" id="gWj-hh-TKe"/>
                         <segue destination="7B3-K4-5YZ" kind="push" identifier="PushDoneViewController" id="Jxa-QG-jdo"/>
                     </connections>
                 </viewController>
@@ -331,6 +334,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="topdown-bg.png" width="374" height="498"/>
         <image name="topdown-stack-lower.png" width="374" height="498"/>
         <image name="topdown-stack-upper.png" width="266" height="477"/>
     </resources>
@@ -340,6 +344,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ehK-VQ-Af3"/>
+        <segue reference="DQJ-Ct-G4v"/>
     </inferredMetricsTieBreakers>
 </document>

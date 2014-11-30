@@ -12,7 +12,7 @@
 @interface SUGTransactionBuddiesViewModel ()
 
 @property (nonatomic, strong) NSDictionary *transaction;
-
+@property (nonatomic) NSNumberFormatter *formatter;
 @end
 
 
@@ -25,6 +25,9 @@
         return nil;
     }
     
+    _formatter = [[NSNumberFormatter alloc] init];
+    [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    [_formatter setCurrencyDecimalSeparator:@"."];
     _transaction = transaction;
         
     return self;
@@ -45,7 +48,8 @@
 
 - (NSString *)transactionSubtitle
 {
-    NSString *title = [NSString stringWithFormat:@"%@ %@ each", self.transaction[@"splitamount"], self.transaction[@"currency"]];
+    double splitAmount = [self.transaction[@"splitamount"] doubleValue];
+    NSString *title = [NSString stringWithFormat:@"%@", [self.formatter stringFromNumber:@(splitAmount)]];
     
     return title;
 }
