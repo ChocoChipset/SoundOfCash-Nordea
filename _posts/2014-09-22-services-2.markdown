@@ -2,12 +2,10 @@
 layout: default
 img: dog.png
 category: Services
-title: 3D Device Mockups<br>by PSDCovers
+title: Chip-in on a bill
 description: |
-  <p class="lead">Turn your 2D designs into high quality, 3D
-  product shots in seconds using free Photoshop actions by <a
-  target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit
-  their website to download some of their awesome, free photoshop
-  actions!</p>
+  <p class="lead">Don't worry about calculating how to split the bill
+  or exchange bank details, we've got you covered. Simply stack the
+  phones on top of each other and watch the magic happen.</p>
 
 ---
