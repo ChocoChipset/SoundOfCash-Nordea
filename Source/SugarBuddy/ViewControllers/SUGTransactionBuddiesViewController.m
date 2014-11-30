@@ -100,6 +100,8 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     return cell;
 }
 
+
+
 #pragma mark - SUGBackendManagerDelegate
 
 - (void)backendManager:(SUGBackendManager *)backendManager responseObject:(id)response
