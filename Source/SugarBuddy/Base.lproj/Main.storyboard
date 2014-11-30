@@ -185,6 +185,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didSelectTransaciton:" destination="Kwn-62-kgi" eventType="touchUpInside" id="GsK-zs-Ic1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 1,200 SEK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B5n-tm-RjR">
                                         <rect key="frame" x="17" y="82" width="295" height="29"/>
@@ -294,6 +297,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DQJ-Ct-G4v"/>
+        <segue reference="ehK-VQ-Af3"/>
     </inferredMetricsTieBreakers>
 </document>

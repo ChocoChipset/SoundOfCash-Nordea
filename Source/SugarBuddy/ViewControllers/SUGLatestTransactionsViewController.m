@@ -85,6 +85,11 @@ static NSString * const SUGTransactionBuddiesCellID = @"transactions-cell-id";
 
 #pragma mark -
 
+- (IBAction)didSelectTransaciton:(id)sender
+{
+    [self performSegueWithIdentifier:@"PushTransactionBuddies" sender:[NSIndexPath indexPathForItem:0 inSection:0]];
+}
+
 - (void)reloadUIData
 {
     self.transactionTitle.text = [self.viewModel titleForIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
