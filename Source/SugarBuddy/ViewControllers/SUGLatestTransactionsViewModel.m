@@ -11,7 +11,7 @@
 @interface SUGLatestTransactionsViewModel ()
 
 @property (nonatomic) NSArray *transactions;
-
+@property (nonatomic) NSNumberFormatter *formatter;
 @end
 
 
@@ -23,7 +23,12 @@
         return nil;
     }
     
+    _formatter = [[NSNumberFormatter alloc] init];
+    [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    [_formatter setCurrencyDecimalSeparator:@"."];
+
     _transactions = transactions;
+    
     
     return self;
 }
@@ -52,8 +57,8 @@
 - (NSString *)subtitleForIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *transaction = [self transactionForIndexPath:indexPath];
-    
-    return [NSString stringWithFormat:@"%@ %@", transaction[@"amount"], transaction[@"currency"]];
+
+    return [NSString stringWithFormat:@"%@", [self.formatter stringFromNumber:@([transaction[@"amount"] doubleValue])]];
 }
 
 - (double)latitudeForIndexPath:(NSIndexPath *)indexPath
