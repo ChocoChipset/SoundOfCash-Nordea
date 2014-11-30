@@ -13,6 +13,8 @@
 
 @interface SUGTransactionBuddiesViewModel : NSObject
 
+@property (nonatomic) NSString *transactionID;
+
 @property (nonatomic) NSInteger numberOfSections;
 
 @property (nonatomic) NSString *transactionTitle;

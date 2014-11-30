@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSTimer *readRSSITimer;
 @property (nonatomic, strong) NSMutableArray *rssiArray;
 @property (nonatomic, assign) int rssiArrayIndex;
-
+@property (nonatomic) NSString *characteristicValue;
 @end
 
 @implementation SUGBeaconReceiver
@@ -59,7 +59,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    NSLog(@"%@", peripheral);
+    NSLog(@"Paired Peripheral: %@", peripheral);
         
     self.pairedPeripheral = peripheral;
     [self.manager connectPeripheral:self.pairedPeripheral options:nil];
@@ -111,11 +111,10 @@
     for (CBCharacteristic *characteristic in service.characteristics) {
         
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:SUGBTCharacteristicUUID]]) {
-            
             id tempDelegate = self.delegate;
             if ([tempDelegate respondsToSelector:@selector(didConnectToBeacon)])
                 [self.delegate didConnectToBeacon];
-            
+            [self.pairedPeripheral readValueForCharacteristic:characteristic];
             [self.pairedPeripheral setNotifyValue:YES forCharacteristic:characteristic];
         }
     }
@@ -138,14 +137,20 @@
        
         id tempDelegate = self.delegate;
         if ([tempDelegate respondsToSelector:@selector(beaconPeripheral:didUpdateRSSI:)])
-            [self.delegate beaconPeripheral:peripheral
+            [self.delegate beaconPeripheral:self.characteristicValue
                               didUpdateRSSI:[self averageFromLastRSSI]];
     }
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+    
     id tempDelegate = self.delegate;
+    
+    if (characteristic.value.length) {
+        self.characteristicValue = [NSString stringWithUTF8String:[characteristic.value bytes]];
+    }
+    
     if ([tempDelegate respondsToSelector:@selector(didDetectInteraction)])
         [self.delegate didDetectInteraction];
 }

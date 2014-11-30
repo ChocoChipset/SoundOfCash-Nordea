@@ -67,6 +67,16 @@ static NSString * const SUGTransactionBuddiesCellID = @"cell-id";
     [[self collectionView] reloadData];
 }
 
+#pragma mark - IBActions
+
+
+- (IBAction)commitTransactionButtonDidTouchUpInside:(id)sender
+{
+    [[SUGBackendManager sharedManager] commitSplitBill:self.viewModel.transactionID];
+    
+    [self performSegueWithIdentifier:SUGTransitionIDForPushDoneViewController sender:nil];
+}
+
 #pragma mark - UICollectionViewDelegate
 
 

@@ -33,6 +33,11 @@
 #pragma mark -
 
 
+- (NSString *)transactionID
+{
+    return self.transaction[@"transaction"][@"id"];
+}
+
 - (NSString *)transactionTitle
 {
     return self.transaction[@"transaction"][@"title"];

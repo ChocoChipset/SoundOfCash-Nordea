@@ -66,7 +66,7 @@ static SUGBackendManager *static_backendManager = nil;
     
     NSDictionary* parameters = @{@"transaction": transactionID};
     
-    UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
+    [[UNIRest post:^(UNISimpleRequest *request) {
         [request setUrl:@"https://soundofcash.mybluemix.net/api/bills"];
         [request setParameters:parameters];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {

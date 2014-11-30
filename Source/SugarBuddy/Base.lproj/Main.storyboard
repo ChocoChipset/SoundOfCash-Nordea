@@ -148,6 +148,9 @@
                     <navigationItem key="navigationItem" title="Chip In!" id="tMe-Sf-dmb">
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="5dN-l4-ELs">
                             <color key="tintColor" red="1" green="0.87450980392156863" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="commitTransactionButtonDidTouchUpInside:" destination="vXZ-lx-hvc" id="RUt-AA-82P"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
@@ -155,11 +158,44 @@
                         <outlet property="collectionView" destination="lcB-4z-cgU" id="Kdj-6p-cev"/>
                         <outlet property="totalPerPerson" destination="Zt5-fs-QL2" id="CNt-6Z-raJ"/>
                         <outlet property="transactionTotal" destination="rNc-sw-b2P" id="gWj-hh-TKe"/>
+                        <segue destination="7B3-K4-5YZ" kind="push" identifier="PushDoneViewController" id="Jxa-QG-jdo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="402" y="1103"/>
+        </scene>
+        <!--Done!-->
+        <scene sceneID="k6x-LR-pk8">
+            <objects>
+                <viewController id="7B3-K4-5YZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4HI-BD-oGA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everybody Chiped'in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zzd-9A-sfX">
+                                <rect key="frame" x="16" y="74" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t98-dt-j4l">
+                                <rect key="frame" x="16" y="172" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Again">
+                                    <color key="titleColor" red="0.078431372550000003" green="0.63921568630000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Done!" id="Cg3-cG-dFh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgc-gM-19r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="1103"/>
         </scene>
         <!--Transactions-->
         <scene sceneID="JMO-pJ-Qdh">
@@ -175,7 +211,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cbD-n8-yTq">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -189,7 +225,7 @@
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Ri1-r7-7xj">
                                         <rect key="frame" x="17" y="119" width="287" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Bon Bon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KPu-Gq-4N3">
                                         <rect key="frame" x="17" y="49" width="295" height="29"/>
@@ -210,7 +246,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DoK-8N-xkk">
                                 <rect key="frame" x="0.0" y="334" width="320" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ChK-9e-112">
                                     <size key="itemSize" width="320" height="35"/>

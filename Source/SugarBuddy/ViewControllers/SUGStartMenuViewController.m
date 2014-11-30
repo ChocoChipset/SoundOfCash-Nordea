@@ -22,11 +22,11 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 @implementation SUGStartMenuViewController
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CBPeripheral *)peripheral
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSString *)peripheral
 {
     if ([segue.identifier isEqualToString:SUGTransitionIDForPushTransactionBuddiesAsSugarBaby]) {
         SUGTransactionBuddiesViewController *nextVC = segue.destinationViewController;
-        nextVC.beaconID = [peripheral.name SHA1];
+        nextVC.beaconID = peripheral;
         nextVC.sugarDaddy = NO;
     }
 }
@@ -51,9 +51,9 @@ const NSInteger SUGStartMenuBeaconThreshold = -30;
 #pragma mark - SUGBeaconReceiverDelegate
 
 
-- (void)beaconPeripheral:(CBPeripheral *)peripheral didUpdateRSSI:(int)RSSI
+- (void)beaconPeripheral:(NSString *)peripheral didUpdateRSSI:(int)RSSI
 {
-    NSLog(@"%@", [peripheral.name SHA1]);
+    NSLog(@"Peripheral %@. RSSI: %d", peripheral, RSSI);
     
     if (RSSI > SUGStartMenuBeaconThreshold) {
         

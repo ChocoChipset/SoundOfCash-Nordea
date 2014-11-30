@@ -63,9 +63,9 @@
     NSString *deviceID = [SUGBackendManager sharedManager].deviceID;
     
     self.transferCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString: SUGBTCharacteristicUUID]
-                                                                     properties:CBCharacteristicPropertyNotify
+                                                                     properties:(CBCharacteristicPropertyRead)
                                                                           value:[deviceID dataUsingEncoding:NSUTF8StringEncoding]
-                                                                    permissions:CBAttributePermissionsReadable];
+                                                                    permissions:(CBAttributePermissionsReadable)];
     
     CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:SUGBTServiceUUID]
                                                                        primary:YES];
@@ -75,7 +75,7 @@
     [self.peripheralManager addService:transferService];
     
     [self.peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:SUGBTServiceUUID]],
-                                                CBAdvertisementDataLocalNameKey : SUGBTServiceLocalNameKey }];
+                                                CBAdvertisementDataLocalNameKey : SUGBTServiceLocalNameKey}];
     
     NSLog(@"PeripheralManager is broadcasting (%@).", SUGBTCharacteristicUUID);
 }
